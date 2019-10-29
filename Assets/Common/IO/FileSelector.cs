@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System;
 using UnityEngine.WSA;
 using UnityEngine.UI;
+using TMPro;
 
 #if ENABLE_WINMD_SUPPORT
 using Windows.Storage;
@@ -15,10 +16,9 @@ using Windows.Storage.Streams;
 using Windows.Storage.Pickers;
 #endif
 
-public class OpenFile : MonoBehaviour
+public class FileSelector
 {
-    public Text label;
-    public GameObject cube;
+    public TextMeshPro label;
 
 #if ENABLE_WINMD_SUPPORT
     private FileOpenPicker openPicker;
@@ -33,11 +33,6 @@ public class OpenFile : MonoBehaviour
 #else
         UnityEngine.Debug.Log("ENABLE_WINMD_SUPPORT false");
 #endif
-    }
-
-    void Start()
-    {
-
     }
 
     void ThreadCallback()
@@ -74,7 +69,7 @@ public class OpenFile : MonoBehaviour
 
         UnityEngine.WSA.Application.InvokeOnAppThread( ThreadCallback, false );
 
-        UnityEngine.WSA.Application.InvokeOnAppThread( new AppCallbackItem( () => { label.text = labelText; } ), false );
+        UnityEngine.WSA.Application.InvokeOnAppThread( new AppCallbackItem( () => { label.setText(labelText); } ), false );
     }
 #endif
 

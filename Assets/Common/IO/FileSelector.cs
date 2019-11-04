@@ -69,7 +69,7 @@ public class FileSelector
 
         UnityEngine.WSA.Application.InvokeOnAppThread( ThreadCallback, false );
 
-        UnityEngine.WSA.Application.InvokeOnAppThread( new AppCallbackItem( () => { label.setText(labelText); } ), false );
+        UnityEngine.WSA.Application.InvokeOnAppThread( new AppCallbackItem( () => { label.SetText(labelText); } ), false );
     }
 #endif
 

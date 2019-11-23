@@ -175,7 +175,7 @@ namespace DataVisualization.Plotter
             InitalizeInteraction(xMax, yMax, zMax, xMin, yMin, zMin);
 
             //center the plot in middle of the screen
-            PointHolder.transform.position = new Vector3(0, 0, 0);
+            PointHolder.transform.localPosition = new Vector3(0, 0, 0);
         }
 
         private float FindMaxValue(List<float> values)

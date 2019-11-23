@@ -10,22 +10,42 @@ using UnityEngine;
 public class ViewExampleAction : MonoBehaviour
 {
 
-    public TextMeshPro label;
+    const float ExampleLoadDistance = 0.8f;
 
-    public void onPress()
+    /**
+     * 
+     * 
+     */
+    public void OnPress()
+    {
+        UnityEngine.Debug.Log("LoadExampleButton pressed");
+        DataPlotter plot = GetExamplePlot();
+        GameObject plotContainer =new GameObject();
+
+        // Set the plot to appear in front of the user and facing the user
+        Vector3 forwardVector = Camera.main.gameObject.transform.forward;
+        forwardVector.y = 0;
+        forwardVector.Normalize();
+
+        plot.transform.SetParent(plotContainer.transform);
+        plotContainer.transform.position = Camera.main.gameObject.transform.position + forwardVector * ExampleLoadDistance;
+        plotContainer.transform.rotation = Quaternion.LookRotation(-forwardVector);
+    }
+
+    private DataPlotter GetExamplePlot()
     {
         List<float> xPoints = new List<float>();
         List<float> yPoints = new List<float>();
         List<float> zPoints = new List<float>();
 
-        UnityEngine.Debug.LogFormat("LoadExampleButton pressed");
         TextAsset flightData = Resources.Load("DroneData/FlightData2") as TextAsset;
 
         using (TextReader reader = new StringReader(flightData.text))
-        using (var csv = new CsvReader(reader)) {
+        using (var csv = new CsvReader(reader))
+        {
             csv.Read();
             csv.ReadHeader();
-            
+
             string[] headerRow = csv.Context.HeaderRecord;
             int xIndex = Array.IndexOf(headerRow, "latitude");
             int yIndex = Array.IndexOf(headerRow, "altitude (m)");
@@ -39,7 +59,6 @@ public class ViewExampleAction : MonoBehaviour
             }
 
             GameObject plot = new GameObject();
-            Transform transform = plot.AddComponent<Transform>();
             DataPlotter plotter = plot.AddComponent<DataPlotter>();
 
             plotter.PointHolder = plot;
@@ -61,8 +80,9 @@ public class ViewExampleAction : MonoBehaviour
             plotter.plotScale = 0.5f;
 
             plotter.titleName = "test flight data";
-        }
 
+            return plotter;
+        }
     }
 
 }

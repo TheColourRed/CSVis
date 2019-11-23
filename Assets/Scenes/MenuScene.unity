@@ -2679,7 +2679,6 @@ GameObject:
   - component: {fileID: 114809329943893279}
   - component: {fileID: 5253365468308373656}
   - component: {fileID: 4750325156363614023}
-  - component: {fileID: 1210820955583060}
   - component: {fileID: 1210820955583061}
   m_Layer: 5
   m_Name: SelectFileButton
@@ -2688,18 +2687,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1210820955583060
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1210820955583059}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a842b3ae60abd674da4fecca054b7f0e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1210820955583061
 MonoBehaviour:
   m_ObjectHideFlags: 0

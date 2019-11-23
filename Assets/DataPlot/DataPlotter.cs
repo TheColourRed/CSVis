@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 using System;
 using Microsoft.MixedReality.Toolkit.UI;
 
@@ -8,28 +9,54 @@ namespace DataVisualization.Plotter
 {
     public class DataPlotter : MonoBehaviour
     {
+        [Tooltip("X values")]
         public List<float> Xpoints = new List<float>();
+        [Tooltip("Y values")]
         public List<float> Ypoints = new List<float>();
+        [Tooltip("Z values leave empty if you want a 2D Plot")]
         public List<float> Zpoints = new List<float>();
 
         // Full column names
+        [Tooltip("X axis label")]
         public String xName;
+        [Tooltip("Y axis label")]
         public String yName;
+        [Tooltip("z axis label")]
         public String zName;
 
         //Title Text
+        [Tooltip("Title of plot")]
         public String titleName;
 
+        [Tooltip("changes size scale of plot ie 1 the plot will be 1 m in size")]
         public float plotScale = 10;
 
         // The prefab for the data points that will be instantiated
+        [Tooltip("The prefab for the data points that will be instantiated")]
         public GameObject PointPrefab;
 
         // Object which will contain instantiated prefabs in hiearchy
+        [Tooltip("Object which will contain instantiated prefabs in hiearchy")]
         public GameObject PointHolder;
 
+        [Tooltip("(optional) AppBar which will be used for plot use only the APPBar found in MRTK")]
+        public GameObject appBar;
+
         // Object which will contain text in hiearchy
+        [Tooltip("Object which will contain text in hiearchy")]
         public GameObject Text;
+
+        [Tooltip("Material applied to handles when they are not in a grabbed state (Optional)")]
+        public Material handleMaterial;
+
+        [Tooltip("Material applied to handles while they are a grabbed (Optional)")]
+        public Material handelGrabbedMaterial;
+
+        [Tooltip("Prefab used to display rotation handles. If not set a sphere will be displayed instead")]
+        public GameObject rotationHandle;
+
+        [Tooltip("Prefab used to display scale handles in corners. If not set, boxes will be displayed instead")]
+        public GameObject scaleHandle;
 
         private Boolean twoD=false;
 
@@ -101,13 +128,15 @@ namespace DataVisualization.Plotter
                     new Color(x, y, z, 1.0f);
             }
 
-            GameObject title = Instantiate(Text, new Vector3(normalize(xMid, xMax, xMin), normalize((yMax + (float)0.5), yMax, yMin), normalize(zMid, zMax, zMin)) * plotScale, Quaternion.identity);
+            GameObject title = Instantiate(Text, new Vector3(normalize(xMid, xMax, xMin), normalize(yMax, yMax, yMin), normalize(zMid, zMax, zMin)) * plotScale, Quaternion.identity);
             //add title 
             title.transform.parent = PointHolder.transform;
             title.GetComponent<TextMesh>().text = titleName;
             title.transform.name = "title";
             //scale the size of text depending on PlotScale
             title.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f) * plotScale;
+            //place title so it is just above plot
+            title.transform.position = title.transform.position + new Vector3(0,title.GetComponent<Renderer>().bounds.size.y/2, 0);
 
             //add x label
             GameObject xLabel;
@@ -216,10 +245,34 @@ namespace DataVisualization.Plotter
             float yMid = FindMiddle(yMax, yMin);
 
             BoxCollider boxCollider = PointHolder.AddComponent<BoxCollider>();
-            PointHolder.transform.gameObject.GetComponent<BoxCollider>().size = new Vector3(normalize(xMax, xMax, xMin), normalize(yMax, yMax, yMin), normalize(zMax, zMax, zMin));
+            PointHolder.transform.gameObject.GetComponent<BoxCollider>().size = new Vector3(normalize(xMax, xMax, xMin), normalize(yMax, yMax, yMin), normalize(zMax, zMax, zMin)) * plotScale;
 
             PointHolder.AddComponent<BoundingBox>();
+            PointHolder.GetComponent<BoundingBox>().WireframeEdgeRadius= PointHolder.GetComponent<BoundingBox>().WireframeEdgeRadius * plotScale;
+            PointHolder.GetComponent<BoundingBox>().WireframeMaterial.color = Color.white;
             PointHolder.AddComponent<ManipulationHandler>();
+
+            //scale handle sizes
+            PointHolder.GetComponent<BoundingBox>().ScaleHandleSize= PointHolder.GetComponent<BoundingBox>().ScaleHandleSize * plotScale;
+            PointHolder.GetComponent<BoundingBox>().RotationHandleSize= PointHolder.GetComponent<BoundingBox>().RotationHandleSize * plotScale;
+
+
+            //Optional handle prefab Models
+            PointHolder.GetComponent<BoundingBox>().HandleGrabbedMaterial=handelGrabbedMaterial;
+            PointHolder.GetComponent<BoundingBox>().HandleMaterial= handleMaterial;
+            PointHolder.GetComponent<BoundingBox>().ScaleHandlePrefab=scaleHandle;
+            PointHolder.GetComponent<BoundingBox>().RotationHandleSlatePrefab=rotationHandle;
+
+            //Optional add appBar
+            if (appBar != null)
+            {
+                GameObject objectBar = Instantiate(appBar, new Vector3(0, 0, 0), Quaternion.identity);
+                objectBar.transform.parent = PointHolder.transform.parent;
+                objectBar.transform.localScale = new Vector3(2f, 2f, 2f) * plotScale;
+                var so= new SerializedObject(objectBar.GetComponent<AppBar>());
+                so.FindProperty("boundingBox").objectReferenceValue = PointHolder.GetComponent<BoundingBox>();
+                so.ApplyModifiedProperties();
+            }
         }
     }
 }

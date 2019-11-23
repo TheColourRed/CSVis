@@ -28,8 +28,8 @@ public class ViewExampleAction : MonoBehaviour
             
             string[] headerRow = csv.Context.HeaderRecord;
             int xIndex = Array.IndexOf(headerRow, "latitude");
-            int yIndex = Array.IndexOf(headerRow, "longitude");
-            int zIndex = Array.IndexOf(headerRow, "altitude (m)");
+            int yIndex = Array.IndexOf(headerRow, "altitude (m)");
+            int zIndex = Array.IndexOf(headerRow, "longitude");
 
             while (csv.Read())
             {
@@ -38,12 +38,15 @@ public class ViewExampleAction : MonoBehaviour
                 zPoints.Add(csv.GetField<float>(zIndex));
             }
 
-
             GameObject plot = new GameObject();
+            Transform transform = plot.AddComponent<Transform>();
             DataPlotter plotter = plot.AddComponent<DataPlotter>();
 
             plotter.PointHolder = plot;
-            plotter.PointPrefab = GameObject.CreatePrimitive(PrimitiveType.Cube);
+
+            GameObject dataPoint = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            plotter.PointPrefab = dataPoint;
+            Destroy(dataPoint);
 
             plotter.Text = Resources.Load("DataPlot/text3D") as GameObject;
 
@@ -55,22 +58,11 @@ public class ViewExampleAction : MonoBehaviour
             plotter.yName = headerRow[yIndex];
             plotter.zName = headerRow[zIndex];
 
+            plotter.plotScale = 0.5f;
+
             plotter.titleName = "test flight data";
         }
 
-
-        label.SetText("Coming soon");
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using System;
 using Microsoft.MixedReality.Toolkit.UI;
 
@@ -262,17 +264,21 @@ namespace DataVisualization.Plotter
             PointHolder.GetComponent<BoundingBox>().HandleMaterial= handleMaterial;
             PointHolder.GetComponent<BoundingBox>().ScaleHandlePrefab=scaleHandle;
             PointHolder.GetComponent<BoundingBox>().RotationHandleSlatePrefab=rotationHandle;
-
+            
+/*
+            The app bar feature here is disabled temporarily as it does not build
+            due to use of UnityEditor exclusive feature serializable object. 
             //Optional add appBar
             if (appBar != null)
             {
                 GameObject objectBar = Instantiate(appBar, new Vector3(0, 0, 0), Quaternion.identity);
                 objectBar.transform.parent = PointHolder.transform.parent;
                 objectBar.transform.localScale = new Vector3(2f, 2f, 2f) * plotScale;
-                var so= new SerializedObject(objectBar.GetComponent<AppBar>());
+                var so = new SerializedObject(objectBar.GetComponent<AppBar>());
                 so.FindProperty("boundingBox").objectReferenceValue = PointHolder.GetComponent<BoundingBox>();
                 so.ApplyModifiedProperties();
             }
+*/
         }
     }
 }

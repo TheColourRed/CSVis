@@ -16,32 +16,42 @@ using Windows.Storage.Streams;
 using Windows.Storage.Pickers;
 #endif
 
-public class FileSelector
+namespace Common.IO
 {
-    public TextMeshPro label;
+    public class FileSelector
+    {
+        public TextMeshPro label;
 
 #if ENABLE_WINMD_SUPPORT
     private FileOpenPicker openPicker;
 #endif
 
-    public void SelectFile()
-    {
-        UnityEngine.Debug.LogFormat("UnityThread: {0}", Thread.CurrentThread.ManagedThreadId);
+        public void SelectFile()
+        {
+            UnityEngine.Debug.LogFormat("UnityThread: {0}", Thread.CurrentThread.ManagedThreadId);
+            string text = null;
 
 #if ENABLE_WINMD_SUPPORT
-        UnityEngine.WSA.Application.InvokeOnUIThread(OpenFileAsync, false);  
+        UnityEngine.WSA.Application.InvokeOnUIThread(
+        () => 
+        {
+            OpenFileAsync(text);
+        }, 
+        false);  
+        UnityEngine.Debug.Log(text);
 #else
-        UnityEngine.Debug.Log("ENABLE_WINMD_SUPPORT false");
+            UnityEngine.Debug.Log("ENABLE_WINMD_SUPPORT false");
 #endif
-    }
+            UnityEngine.Debug.Log(text);
+        }
 
-    void ThreadCallback()
-    {
-        UnityEngine.Debug.LogFormat("ThreadCallback() on thread: \t{0}", Thread.CurrentThread.ManagedThreadId);
-    }
+        void ThreadCallback()
+        {
+            UnityEngine.Debug.LogFormat("ThreadCallback() on thread: \t{0}", Thread.CurrentThread.ManagedThreadId);
+        }
 
 #if ENABLE_WINMD_SUPPORT
-    public async void OpenFileAsync()
+    public async void OpenFileAsync(String text)
     {  
         UnityEngine.Debug.LogFormat( "OpenFileAsync() on Thread: {0}", Thread.CurrentThread.ManagedThreadId );
 
@@ -58,6 +68,7 @@ public class FileSelector
         {
             // Application now has read/write access to the picked file 
             labelText = "Picked file: " + file.DisplayName;
+            text = await Windows.Storage.FileIO.ReadTextAsync(file);
         }
         else
         {
@@ -73,4 +84,5 @@ public class FileSelector
     }
 #endif
 
+    }
 }

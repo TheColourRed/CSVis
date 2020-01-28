@@ -15,6 +15,7 @@
             <e p="ClearAllAction.cs" t="Include" />
             <e p="DroneExampleAction.cs" t="Include" />
             <e p="ElectronScatteringDistributionExampleAction.cs" t="Include" />
+            <e p="IrisDataSetExampleAction.cs" t="Include" />
             <e p="MainMenuAction.cs" t="Include" />
             <e p="SelectFileAction.cs" t="Include" />
             <e p="SineWaveExampleAction.cs" t="Include" />

@@ -8,6 +8,22 @@ public class MainMenuAction : MonoBehaviour
     
     public GameObject ExampleMenuInstance;
 
+    public GameObject DataFormatMenuInstance;
+
+    public void OnFileSelect()
+    {
+        Debug.Log("FileSelectButton pressed");
+        MainMenuPrefab.SetActive(false);
+        DataFormatMenuInstance.SetActive(true);
+    }
+    
+    public void OnCloseDataFormatMenu()
+    {
+        Debug.Log("DataFormatMenuButton pressed");
+        MainMenuPrefab.SetActive(true);
+        ExampleMenuInstance.SetActive(false);
+    }
+    
     public void OnViewExample()
     {
         Debug.Log("LoadExampleButton pressed");

@@ -6,6 +6,8 @@ using UnityEditor;
 #endif
 using System;
 using Microsoft.MixedReality.Toolkit.UI;
+using Microsoft.MixedReality.Toolkit.Utilities;
+using UnityEngine.XR.WSA;
 
 namespace DataVisualization.Plotter
 {
@@ -242,17 +244,16 @@ namespace DataVisualization.Plotter
 
         private void InitalizeInteraction(float xMax, float yMax, float zMax, float xMin, float yMin, float zMin)
         {
-            float xMid = FindMiddle(xMax, xMin);
-            float zMid = FindMiddle(zMax, zMin);
-            float yMid = FindMiddle(yMax, yMin);
-
-            BoxCollider boxCollider = PointHolder.AddComponent<BoxCollider>();
+            PointHolder.AddComponent<BoxCollider>();
+            PointHolder.AddComponent<SpatialMappingCollider>();
+            
             PointHolder.transform.gameObject.GetComponent<BoxCollider>().size = new Vector3(normalize(xMax, xMax, xMin), normalize(yMax, yMax, yMin), normalize(zMax, zMax, zMin)) * plotScale;
 
             PointHolder.AddComponent<BoundingBox>();
             PointHolder.GetComponent<BoundingBox>().WireframeEdgeRadius= PointHolder.GetComponent<BoundingBox>().WireframeEdgeRadius * plotScale;
             PointHolder.GetComponent<BoundingBox>().WireframeMaterial.color = Color.white;
-            PointHolder.AddComponent<ManipulationHandler>();
+            var manipulationHandler = PointHolder.AddComponent<ManipulationHandler>();
+            manipulationHandler.ConstraintOnRotation = RotationConstraintType.YAxisOnly;
 
             //scale handle sizes
             PointHolder.GetComponent<BoundingBox>().ScaleHandleSize= PointHolder.GetComponent<BoundingBox>().ScaleHandleSize * plotScale;

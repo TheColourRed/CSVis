@@ -18,6 +18,7 @@
             <e p="MainMenuAction.cs" t="Include" />
             <e p="SelectFileAction.cs" t="Include" />
             <e p="SineWaveExampleAction.cs" t="Include" />
+            <e p="UIElementDragger.cs" t="Include" />
           </e>
         </e>
         <e p="DataPlot" t="Include">

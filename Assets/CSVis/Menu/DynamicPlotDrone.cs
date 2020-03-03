@@ -13,7 +13,7 @@ using UnityEngine;
 
 public class DynamicPlotDroneAction : MonoBehaviour
 {
-    const float ExampleLoadDistance = 0.8f;
+    const float ExampleLoadDistance = 2f;
 
     public void OnPress()
     {
@@ -26,17 +26,15 @@ public class DynamicPlotDroneAction : MonoBehaviour
         Vector3 cameraForwardVector = Camera.main.transform.forward;
         Vector3 cameraPosition = Camera.main.transform.position;
 
+        // set y to 0 as to not move it horizontally when spawing
+        cameraForwardVector.y = 0;
         var forwardPositionVector = cameraPosition + cameraForwardVector.normalized * ExampleLoadDistance;
-        var forwardRotationVector = Quaternion.LookRotation(
-            Vector3.Scale(cameraForwardVector.normalized, new Vector3(0, 1, 0))
-        );
 
         plot.transform.SetParent(plotContainer.transform);
 
-        plot.transform.position = forwardPositionVector;
-        plot.transform.rotation = forwardRotationVector;
+        plotContainer.transform.localRotation = Quaternion.LookRotation(cameraForwardVector);
         plotContainer.transform.position = forwardPositionVector;
-        plotContainer.transform.rotation = forwardRotationVector;
+
     }
 
     private DynamicPlotter GetExamplePlot()
@@ -80,7 +78,7 @@ public class DynamicPlotDroneAction : MonoBehaviour
             graph.AddTimePoints(time_values);
 
             // 3. init graph 
-            DynamicPlotter plotter = GetPlotter(graph, "Drone Graph");
+            DynamicPlotter plotter = GetPlotter(graph, "Drone Graph test");
 
             return plotter;
         }
@@ -107,6 +105,10 @@ public class DynamicPlotDroneAction : MonoBehaviour
         plotter.Text = text;
 
         plotter.PlotTitle = name;
+        //public string XAxisName, YAxisName, ZAxisName;
+        plotter.XAxisName = "latitude";
+        plotter.YAxisName = "altitude";
+        plotter.ZAxisName = "longitude";
 
         plotter.Init();
 

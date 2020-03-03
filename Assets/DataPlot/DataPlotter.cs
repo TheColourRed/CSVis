@@ -67,6 +67,7 @@ namespace DataVisualization.Plotter
         // Use this for initialization
         void Start()
         {
+            Debug.Log("Dataplotter Start!");
             //if Zpoints was left out initalize it to zeros (2D scatter plot)
             if (Zpoints.Count == 0)
             {

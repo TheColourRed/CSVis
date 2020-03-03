@@ -14,6 +14,8 @@ public class DroneExampleAction : MonoBehaviour
 
     const float ExampleLoadDistance = 0.8f;
 
+    public GameObject plotContainer;
+
     public void OnPress()
     {
         Debug.Log("LoadDroneExampleButton pressed");

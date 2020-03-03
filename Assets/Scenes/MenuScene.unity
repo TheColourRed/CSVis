@@ -597,13 +597,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7a0ac99cdf00234a879ddf79affabb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  location: 139.698212, 35.664035
+  location: 35.65831, 139.70222
   zoom: 16
   plotScale: 3
   MapHolder: {fileID: 1181799635}
   Text: {fileID: 1480396690432197100, guid: daab440c0ddadee49b81e5731376350d, type: 3}
   titleName: map
-  enable3DTerrain: 1
+  enable3DTerrain: 0
   locationStrings: []
   heightValues: []
   colors: []

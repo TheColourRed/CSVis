@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using CSVis.IO;
 using TMPro;
 using UnityEngine;
 
-namespace CSVis
+namespace CSVis.Menu.ButtonActions
 {
     public class SelectFileAction : MonoBehaviour
     {

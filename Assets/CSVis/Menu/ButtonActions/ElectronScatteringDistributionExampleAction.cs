@@ -1,102 +1,58 @@
-﻿using System.Collections.Generic;
-using System.IO;
-using CsvHelper;
+﻿using CSVis.IO;
 using DataVisualization.Plotter;
 using UnityEngine;
 
-namespace CSVis.Menu
+namespace CSVis.Menu.ButtonActions
 {
-    public class ElectronScatteringDistributionExampleAction : MonoBehaviour
+    public class ElectronScatteringDistributionExampleAction : AbstractExampleAction
     {
-        const float ExampleLoadDistance = 0.8f;
+        private const float PlotScale = 0.5f;
+     
+        private const string Title = "Election Scattering Distribution VS Time";
+       
+        private const int XIndex = 1;
 
+        private const int YIndex = 2;
+        
+        private const int ZIndex = 0;
+
+        private const string CsvResourcePath = "Data/C2_2";
+        
+        private const string TextResourcePath = "DataPlot/text3D";
+        
         public void OnPress()
         {
-            Debug.Log("LoadSineExampleButton pressed");
-            DataPlotter plot = GetExamplePlot();
-            GameObject plotContainer = new GameObject();
-            plotContainer.tag = "plotContainer";
-
-            // Set the plot to appear in front of the user and facing the user
-            Vector3 cameraForwardVector = Camera.main.transform.forward;
-            Vector3 cameraPosition = Camera.main.transform.position;
-
-            var forwardPositionVector = cameraPosition + cameraForwardVector.normalized * ExampleLoadDistance;
-            var forwardRotationVector = Quaternion.LookRotation(
-                Vector3.Scale(cameraForwardVector.normalized, new Vector3(0, 1, 0))
-            );
-
-            plot.transform.SetParent(plotContainer.transform);
-
-            plot.transform.position = forwardPositionVector;
-            plot.transform.rotation = forwardRotationVector;
-            plotContainer.transform.position = forwardPositionVector;
-            plotContainer.transform.rotation = forwardRotationVector;
+            Debug.Log("LoadElectronScatteringExampleButton pressed");
+            SetSpawnLocation(Instantiate(GetElectronPlot()));
         }
 
-        private DataPlotter GetExamplePlot()
+        private DataPlotter GetElectronPlot()
         {
-            List<float> xPoints = new List<float>();
-            List<float> yPoints = new List<float>();
-            List<float> zPoints = new List<float>();
+            var csv = Resources.Load(CsvResourcePath) as TextAsset;
+            var columnsByName = new CsvAssetReader(csv).GetColumnsByIndex(XIndex, YIndex, ZIndex);
 
-            TextAsset electronData = Resources.Load("Data/C2_2") as TextAsset;
+            var plotter = new GameObject().AddComponent<DataPlotter>();
 
-            using (TextReader reader = new StringReader(electronData.text))
-            using (var csv = new CsvReader(reader))
-            {
-                csv.Read();
-                csv.ReadHeader();
+            plotter.PointHolder = new GameObject();
 
-                string[] headerRow = csv.Context.HeaderRecord;
-                int xIndex = 1;
-                int yIndex = 2;
-                int zIndex = 0;
+            var dataPoint = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+            plotter.PointPrefab = dataPoint;
+            Destroy(dataPoint);
 
-                while (csv.Read())
-                {
-                    xPoints.Add(csv.GetField<float>(xIndex));
-                    yPoints.Add(csv.GetField<float>(yIndex));
-                    zPoints.Add(csv.GetField<float>(zIndex));
-                }
+            plotter.Text = Resources.Load(TextResourcePath) as GameObject;
 
-                GameObject plot = new GameObject();
-                DataPlotter plotter = plot.AddComponent<DataPlotter>();
+            plotter.Xpoints = columnsByName[XIndex];
+            plotter.Ypoints = columnsByName[YIndex];
+            plotter.Zpoints = columnsByName[ZIndex];
 
-                plotter.PointHolder = plot;
+            plotter.titleName = Title;
+            plotter.xName = "Time";
+            plotter.yName = "Y";
+            plotter.zName = "Z";
 
-                GameObject dataPoint = GameObject.CreatePrimitive(PrimitiveType.Cube);
-                plotter.PointPrefab = dataPoint;
-                Destroy(dataPoint);
+            plotter.plotScale = PlotScale;
 
-                plotter.Text = Resources.Load("DataPlot/text3D") as GameObject;
-
-                plotter.Xpoints = xPoints;
-                plotter.Ypoints = yPoints;
-                plotter.Zpoints = zPoints;
-
-                plotter.xName = "time";
-                plotter.yName = "Y";
-                plotter.zName = "Z";
-
-                plotter.plotScale = 0.5f;
-
-                plotter.titleName = "Election Scattering Distribution VS Time";
-
-                return plotter;
-            }
-        }
-    
-        // Start is called before the first frame update
-        void Start()
-        {
-        
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-        
+            return plotter;
         }
     }
 }

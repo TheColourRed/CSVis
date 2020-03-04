@@ -1,25 +1,26 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class MainMenuAction : MonoBehaviour
+namespace CSVis.Menu.ButtonActions
 {
-    public GameObject MainMenuPrefab;
-    
-    public GameObject ExampleMenuInstance;
-
-    public void OnViewExample()
+    public class MainMenuAction : MonoBehaviour
     {
-        Debug.Log("LoadExampleButton pressed");
-        MainMenuPrefab.SetActive(false);
-        ExampleMenuInstance.SetActive(true);
-    }
-
-    public void OnCloseExample()
-    {
-        Debug.Log("CloseExampleButton pressed");
-        ExampleMenuInstance.SetActive(false);
-        MainMenuPrefab.SetActive(true);
-    }
+        public GameObject MainMenuPrefab;
     
+        public GameObject ExampleMenuInstance;
+
+        public void OnViewExample()
+        {
+            Debug.Log("LoadExampleButton pressed");
+            MainMenuPrefab.SetActive(false);
+            ExampleMenuInstance.SetActive(true);
+        }
+
+        public void OnCloseExample()
+        {
+            Debug.Log("CloseExampleButton pressed");
+            ExampleMenuInstance.SetActive(false);
+            MainMenuPrefab.SetActive(true);
+        }
+    
+    }
 }

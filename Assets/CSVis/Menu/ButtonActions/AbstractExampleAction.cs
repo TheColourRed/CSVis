@@ -1,7 +1,8 @@
 ﻿using DataVisualization.Plotter;
 using UnityEngine;
+using Debug = System.Diagnostics.Debug;
 
-namespace CSVis.Menu
+namespace CSVis.Menu.ButtonActions
 {
     public class AbstractExampleAction : MonoBehaviour
     {
@@ -9,6 +10,7 @@ namespace CSVis.Menu
 
         protected void SetSpawnLocation(DataPlotter plot)
         {
+            Debug.Assert(Camera.main != null, "Camera.main != null");
             var cameraTransform = Camera.main.transform;
 
             // Set the plot to appear in front of the user and facing the user

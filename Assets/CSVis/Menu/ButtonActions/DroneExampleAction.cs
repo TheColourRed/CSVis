@@ -2,7 +2,7 @@
 using DataVisualization.Plotter;
 using UnityEngine;
 
-namespace CSVis.Menu
+namespace CSVis.Menu.ButtonActions
 {
     public class DroneExampleAction : AbstractExampleAction
     {
@@ -28,8 +28,8 @@ namespace CSVis.Menu
 
         private static DataPlotter GetDronePlot()
         {
-            var flightData = Resources.Load(CsvResourcePath) as TextAsset;
-            var columnsByName = new CsvAssetReader(flightData).GetColumnsByHeader(XHeader, YHeader, ZHeader);
+            var csv = Resources.Load(CsvResourcePath) as TextAsset;
+            var columnsByName = new CsvAssetReader(csv).GetColumnsByHeader(XHeader, YHeader, ZHeader);
 
             var plotter = new GameObject().AddComponent<DataPlotter>();
 

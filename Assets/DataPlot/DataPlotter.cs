@@ -65,9 +65,8 @@ namespace DataVisualization.Plotter
         private Boolean twoD=false;
 
         // Use this for initialization
-        void Start()
+        void Awake()
         {
-            Debug.Log("Dataplotter Start!");
             //if Zpoints was left out initalize it to zeros (2D scatter plot)
             if (Zpoints.Count == 0)
             {
@@ -94,7 +93,7 @@ namespace DataVisualization.Plotter
             float yMid = FindMiddle(yMax, yMin);
 
             //center the pivot of object to middle of plot 
-            PointHolder.transform.position = new Vector3(normalize(xMid, xMax, xMin), normalize(yMid, yMax, yMin), normalize(zMid, zMax, zMin)) * plotScale;
+            PointHolder.transform.localPosition = new Vector3(normalize(xMid, xMax, xMin), normalize(yMid, yMax, yMin), normalize(zMid, zMax, zMin)) * plotScale;
 
             //Loop through Pointlist
             for (var i = 0; i < Xpoints.Count; i++)
@@ -141,7 +140,7 @@ namespace DataVisualization.Plotter
             //scale the size of text depending on PlotScale
             title.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f) * plotScale;
             //place title so it is just above plot
-            title.transform.position = title.transform.position + new Vector3(0,title.GetComponent<Renderer>().bounds.size.y/2, 0);
+            title.transform.localPosition = title.transform.localPosition + new Vector3(0,title.GetComponent<Renderer>().bounds.size.y/2, 0);
 
             //add x label
             GameObject xLabel;
@@ -180,7 +179,7 @@ namespace DataVisualization.Plotter
             InitalizeInteraction(xMax, yMax, zMax, xMin, yMin, zMin);
 
             //center the plot in middle of the screen
-            PointHolder.transform.localPosition = new Vector3(0, 0, 0);
+            PointHolder.transform.position = new Vector3(0, 0, 0);
         }
 
         private float FindMaxValue(List<float> values)

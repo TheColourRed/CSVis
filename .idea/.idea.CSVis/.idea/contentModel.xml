@@ -9,9 +9,11 @@
       <e p="Assets" t="Include">
         <e p="CSVis" t="Include">
           <e p="IO" t="Include">
+            <e p="CsvAssetReader.cs" t="Include" />
             <e p="FileSelector.cs" t="Include" />
           </e>
           <e p="Menu" t="Include">
+            <e p="AbstractExampleAction.cs" t="Include" />
             <e p="ClearAllAction.cs" t="Include" />
             <e p="DroneExampleAction.cs" t="Include" />
             <e p="ElectronScatteringDistributionExampleAction.cs" t="Include" />

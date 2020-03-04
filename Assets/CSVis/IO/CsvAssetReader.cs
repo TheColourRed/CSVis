@@ -1,38 +1,46 @@
-﻿using CsvHelper;
-using System;
-using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using CsvHelper;
 using UnityEngine;
 
-public class CsvAssetReader
+namespace CSVis.IO
 {
-
-    private TextAsset csvFile;
-
-    public CsvAssetReader(TextAsset csvFile)
+    /// <summary>
+    /// A utility class to read a csv file text asset 
+    /// </summary>
+    public class CsvAssetReader
     {
-        this.csvFile = csvFile;
-    }
 
-    public Dictionary<string, List<float>> GetColumnsByHeader(params string[] names)
-    {
-        Dictionary<string, List<float>> valuesByName = new Dictionary<string, List<float>>();
+        private readonly TextAsset csvFile;
 
-        using (TextReader reader = new StringReader(this.csvFile.text))
-        using (var csv = new CsvReader(reader))
+        public CsvAssetReader(TextAsset csvFile)
         {
-            csv.Read();
-            csv.ReadHeader();
-
-            Array.ForEach(names, name => valuesByName.Add(name, new List<float>()));
-
-            while (csv.Read())
-            {
-                Array.ForEach(names, name => valuesByName[name].Add(csv.GetField<float>(name)));
-            }
+            this.csvFile = csvFile;
         }
 
-        return valuesByName;
+        /// <summary>
+        /// Returns a dictionary of column value lists by their header names
+        /// </summary>
+        public Dictionary<string, List<float>> GetColumnsByHeader(params string[] names)
+        {
+            var valuesByName = new Dictionary<string, List<float>>();
+
+            using (TextReader reader = new StringReader(csvFile.text))
+            using (var csv = new CsvReader(reader))
+            {
+                csv.Read();
+                csv.ReadHeader();
+
+                Array.ForEach(names, name => valuesByName.Add(name, new List<float>()));
+
+                while (csv.Read())
+                {
+                    Array.ForEach(names, name => valuesByName[name].Add(csv.GetField<float>(name)));
+                }
+            }
+
+            return valuesByName;
+        }
     }
 }

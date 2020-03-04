@@ -42,5 +42,27 @@ namespace CSVis.IO
 
             return valuesByName;
         }
+        
+        
+        /// <summary>
+        /// Returns a dictionary of column value lists by their indices 
+        /// </summary>
+        public Dictionary<int, List<float>> GetColumnsByIndex(params int[] indices)
+        {
+            var valuesByName = new Dictionary<int, List<float>>();
+
+            using (TextReader reader = new StringReader(csvFile.text))
+            using (var csv = new CsvReader(reader))
+            {
+                Array.ForEach(indices, i => valuesByName.Add(i, new List<float>()));
+
+                while (csv.Read())
+                {
+                    Array.ForEach(indices, i => valuesByName[i].Add(csv.GetField<float>(i)));
+                }
+            }
+
+            return valuesByName;
+        }
     }
 }

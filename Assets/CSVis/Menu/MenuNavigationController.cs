@@ -5,22 +5,14 @@ using UnityEngine.UI;
 
 namespace CSVis.Menu
 {
-    public class MenuNavigationController : MonoBehaviour
+    public class MenuNavigationController : AbstractMenuNavigationController
     {
-        public GameObject currentMenu;
-        
         public GameObject previousMenu;
         
         public GameObject mainMenu;
         
         public GameObject minimizeMenu;
 
-        public GameObject closeButton;
-
-        public GameObject backButton;
-
-        public GameObject minimizeButton;
-        
         /// <summary>
         /// Function to map the close button to
         /// Hides the current menu and return to the main menu
@@ -28,8 +20,7 @@ namespace CSVis.Menu
         private void OnClose()
         {
             Debug.Log("Close Button pressed");
-            mainMenu.SetActive(true);
-            currentMenu.SetActive(false);
+            ChangeMenu(mainMenu);
         }
 
         /// <summary>
@@ -39,8 +30,7 @@ namespace CSVis.Menu
         private void OnBack()
         {
             Debug.Log("Back Button pressed");
-            previousMenu.SetActive(true);
-            currentMenu.SetActive(false);
+            ChangeMenu(previousMenu);
         }
         
         /// <summary>
@@ -50,26 +40,34 @@ namespace CSVis.Menu
         private void OnMinimize()
         {
             Debug.Log("Minimize Button pressed");
-            Instantiate(minimizeMenu);
-            currentMenu.SetActive(false);
+            ChangeMenu(minimizeMenu);
+        }
+
+        private void InitButtonListeners()
+        {
+            minimizeMenu.GetComponent<MinimizedMenuController>()
+                .returnMenu = currentMenu;
+
+            foreach (var intractable in gameObject.GetComponentsInChildren<Interactable>())
+            {
+                if (intractable.name == "CloseButton")
+                {
+                    intractable.OnClick.AddListener(OnClose);
+                }
+                else if (intractable.name == "BackButton")
+                {
+                    intractable.OnClick.AddListener(OnBack);
+                }
+                else if (intractable.name == "MinimizeButton")
+                {
+                    intractable.OnClick.AddListener(OnMinimize);
+                }
+            }
         }
         
-        /// <summary>
-        /// Initialize event handlers for button clicks at run time
-        /// as well as set the return menu for the minimized menu  
-        /// </summary>
         private void Start()
         {
-            minimizeMenu.GetComponent<MinimizedMenuController>().returnMenu = currentMenu;
-            
-            var close = closeButton.GetComponent<Interactable>();
-            var back = backButton.GetComponent<Interactable>();
-            var minimize = minimizeButton.GetComponent<Interactable>();
-
-            close.OnClick.AddListener(OnClose);
-            back.OnClick.AddListener(OnBack);
-            minimize.OnClick.AddListener(OnMinimize);
+            InitButtonListeners();
         }
-
     }
 }

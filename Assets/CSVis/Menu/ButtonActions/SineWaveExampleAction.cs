@@ -27,7 +27,7 @@ namespace CSVis.Menu.ButtonActions
         private DataPlotter GetSinePlot()
         {
             var csv = Resources.Load(CsvResourcePath) as TextAsset;
-            var columnsByName = new CsvAssetReader(csv).GetColumnsByIndex(XIndex, YIndex);
+            var columnsByName = new CsvAssetReader(csv).GetColumnsByIndex<float>(XIndex, YIndex);
 
             var plotter = new GameObject().AddComponent<DataPlotter>();
 

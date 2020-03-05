@@ -48,13 +48,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentMenu: {fileID: 0}
   previousMenu: {fileID: 0}
-  mainMenu: {fileID: 0}
+  mainMenu: {fileID: 7368861749637849784, guid: 0438ed6ada851fe40a2af4dbe56a6675,
+    type: 3}
   minimizeMenu: {fileID: 3403478537898585454, guid: 1fc4381bae78f1a4bbbb21fbfd30aca1,
     type: 3}
   closeButton: {fileID: 8404333679310730447}
   backButton: {fileID: 4664908948882095774}
   minimizeButton: {fileID: 3832111412902705579}
-  maximizeButton: {fileID: 0}
 --- !u!1001 &3694531957891624766
 PrefabInstance:
   m_ObjectHideFlags: 0

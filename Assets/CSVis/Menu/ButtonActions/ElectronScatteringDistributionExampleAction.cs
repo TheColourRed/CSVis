@@ -29,7 +29,7 @@ namespace CSVis.Menu.ButtonActions
         private DataPlotter GetElectronPlot()
         {
             var csv = Resources.Load(CsvResourcePath) as TextAsset;
-            var columnsByName = new CsvAssetReader(csv).GetColumnsByIndex(XIndex, YIndex, ZIndex);
+            var columnsByName = new CsvAssetReader(csv).GetColumnsByIndex<float>(XIndex, YIndex, ZIndex);
 
             var plotter = new GameObject().AddComponent<DataPlotter>();
 

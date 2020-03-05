@@ -13,22 +13,36 @@
             <e p="FileSelector.cs" t="Include" />
           </e>
           <e p="Menu" t="Include">
+            <e p="AbstractMenuNavigationController.cs" t="Include" />
             <e p="ButtonActions" t="Include">
               <e p="AbstractExampleAction.cs" t="Include" />
               <e p="ClearAllAction.cs" t="Include" />
               <e p="DroneExampleAction.cs" t="Include" />
               <e p="ElectronScatteringDistributionExampleAction.cs" t="Include" />
               <e p="IrisDataSetExampleAction.cs" t="Include" />
-              <e p="MainMenuAction.cs" t="Include" />
               <e p="SelectFileAction.cs" t="Include" />
               <e p="SineWaveExampleAction.cs" t="Include" />
             </e>
+            <e p="DynamicPlotsMenuController.cs" t="Include" />
+            <e p="ExampleMenuNavigationController.cs" t="Include" />
+            <e p="GeographicMapsMenuController.cs" t="Include" />
+            <e p="MainMenuNavigationController.cs" t="Include" />
             <e p="MenuNavigationController.cs" t="Include" />
             <e p="MinimizedMenuController.cs" t="Include" />
           </e>
         </e>
         <e p="DataPlot" t="Include">
           <e p="DataPlotter.cs" t="Include" />
+        </e>
+        <e p="DynamicPlot" t="Include">
+          <e p="DataParser.cs" t="Include" />
+          <e p="DynamicPlotter.cs" t="Include" />
+          <e p="MyPlot.cs" t="Include" />
+          <e p="PlotManip.cs" t="Include" />
+          <e p="PlotPoint.cs" t="Include" />
+          <e p="PlotPointLL.cs" t="Include" />
+          <e p="TimeSeriesGraph.cs" t="Include" />
+          <e p="TimeSeriesPlotter.cs" t="Include" />
         </e>
         <e p="link.xml" t="Include" />
         <e p="MixedRealityToolkit" t="Include">

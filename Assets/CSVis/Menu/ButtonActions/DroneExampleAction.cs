@@ -29,7 +29,7 @@ namespace CSVis.Menu.ButtonActions
         private static DataPlotter GetDronePlot()
         {
             var csv = Resources.Load(CsvResourcePath) as TextAsset;
-            var columnsByName = new CsvAssetReader(csv).GetColumnsByHeader(XHeader, YHeader, ZHeader);
+            var columnsByName = new CsvAssetReader(csv).GetColumnsByHeader<float>(XHeader, YHeader, ZHeader);
 
             var plotter = new GameObject().AddComponent<DataPlotter>();
 

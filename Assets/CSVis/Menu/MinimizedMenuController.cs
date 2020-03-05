@@ -9,9 +9,9 @@ namespace CSVis.Menu
         
         public GameObject returnMenu;
 
-        private const float MaxDistance = 0.5f;
+        private const float MaxDistance = 0.6f;
         
-        private const float MinDistance = 0.6f;
+        private const float MinDistance = 0.5f;
         
         private const float MaxViewDegrees = 35f;
         

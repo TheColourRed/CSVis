@@ -26,7 +26,7 @@ namespace CSVis.IO
         {
             var valuesByName = new Dictionary<string, List<T>>();
 
-            using (TextReader reader = new StringReader(csvFile.text))
+            using (var reader = new StringReader(csvFile.text))
             using (var csv = new CsvReader(reader))
             {
                 csv.Read();

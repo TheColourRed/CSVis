@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - plotContainer
+  - maximizeButton
   layers:
   - Default
   - TransparentFX

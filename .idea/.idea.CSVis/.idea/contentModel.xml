@@ -23,6 +23,8 @@
               <e p="SelectFileAction.cs" t="Include" />
               <e p="SineWaveExampleAction.cs" t="Include" />
             </e>
+            <e p="MenuNavigationController.cs" t="Include" />
+            <e p="MinimizedMenuController.cs" t="Include" />
           </e>
         </e>
         <e p="DataPlot" t="Include">

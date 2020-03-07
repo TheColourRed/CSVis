@@ -1,10 +1,8 @@
-﻿using Microsoft.MixedReality.Toolkit.Physics;
-using Microsoft.MixedReality.Toolkit.UI;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace CSVis.Menu
+namespace CSVis.Menu.MenuControllers
 {
-    public abstract class AbstractMenuNavigationController : MonoBehaviour
+    public abstract class AbstractMenuController : MonoBehaviour
     {
         
         public GameObject currentMenu;

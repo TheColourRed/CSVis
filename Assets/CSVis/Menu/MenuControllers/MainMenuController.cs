@@ -1,9 +1,9 @@
 ﻿using Microsoft.MixedReality.Toolkit.UI;
 using UnityEngine;
 
-namespace CSVis.Menu
+namespace CSVis.Menu.MenuControllers
 {
-    public class MainMenuNavigationController : AbstractMenuNavigationController
+    public class MainMenuController : AbstractMenuController
     {
 
         public GameObject exampleMenu;

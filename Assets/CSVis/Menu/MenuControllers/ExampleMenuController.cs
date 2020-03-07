@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
-namespace CSVis.Menu
+namespace CSVis.Menu.MenuControllers
 {
-    public class ExampleMenuNavigationController : AbstractMenuNavigationController
+    public class ExampleMenuController : AbstractMenuController
     {
 
         public GameObject staticPlotsMenu;

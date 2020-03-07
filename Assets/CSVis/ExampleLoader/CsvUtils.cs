@@ -4,55 +4,61 @@ using System.IO;
 using CsvHelper;
 using UnityEngine;
 
-namespace CSVis.IO
+namespace CSVis.ExampleLoader
 {
-    /// <summary>
-    /// A utility class to read a csv file text asset 
-    /// </summary>
-    public class CsvAssetReader
+    public static class CsvUtils
     {
-
+        
         /// <summary>
         /// Returns a dictionary of column value lists by their header names
         /// </summary>
-        public Dictionary<string, List<T>> GetColumnsByHeader<T>(string csvFilePath, params string[] names)
+        public static Dictionary<string, List<T>> GetColumnsByHeader<T>(string csvFilePath, params string[] headers)
         {
             var csvFile = Resources.Load(csvFilePath) as TextAsset;
-            
             var valuesByName = new Dictionary<string, List<T>>();
+            
+            if (csvFile == null)
+            {
+                Debug.LogFormat("Csv file {0} was not loaded.", csvFilePath);
+                return valuesByName;
+            }
 
-            using (var reader = new StringReader(csvFile.text))
+            using (TextReader reader = new StringReader(csvFile.text))
             using (var csv = new CsvReader(reader))
             {
                 csv.Read();
                 csv.ReadHeader();
-
-                Array.ForEach(names, name => valuesByName.Add(name, new List<T>()));
-
+                
+                Array.ForEach(headers, i => valuesByName.Add(i, new List<T>()));
+                
                 while (csv.Read())
                 {
-                    Array.ForEach(names, name => valuesByName[name].Add(csv.GetField<T>(name)));
+                    Array.ForEach(headers, i => valuesByName[i].Add(csv.GetField<T>(i)));
                 }
             }
 
             return valuesByName;
         }
         
-        
         /// <summary>
         /// Returns a dictionary of column value lists by their indices 
         /// </summary>
-        public Dictionary<int, List<T>> GetColumnsByIndex<T>(string csvFilePath, params int[] indices)
+        public static Dictionary<int, List<T>> GetColumnsByIndex<T>(string csvFilePath, params int[] indices)
         {
             var csvFile = Resources.Load(csvFilePath) as TextAsset;
-            
             var valuesByName = new Dictionary<int, List<T>>();
+            
+            if (csvFile == null)
+            {
+                Debug.LogFormat("Csv file {0} was not loaded.", csvFilePath);
+                return valuesByName;
+            }
 
             using (TextReader reader = new StringReader(csvFile.text))
             using (var csv = new CsvReader(reader))
             {
                 Array.ForEach(indices, i => valuesByName.Add(i, new List<T>()));
-
+                
                 while (csv.Read())
                 {
                     Array.ForEach(indices, i => valuesByName[i].Add(csv.GetField<T>(i)));

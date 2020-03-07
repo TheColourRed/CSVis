@@ -9,27 +9,39 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="CSVis" t="Include">
+          <e p="ExampleLoader" t="Include">
+            <e p="CarletonUniversityMapPlotterHelper.cs" t="Include" />
+            <e p="CsvUtils.cs" t="Include" />
+            <e p="DynamicDronePlotter.cs" t="Include" />
+            <e p="DynamicPlotterHelper.cs" t="Include" />
+            <e p="ElectronScatteringDistributionPlotHelper.cs" t="Include" />
+            <e p="GeoMapPlotterHelper.cs" t="Include" />
+            <e p="IrisDataSetPlotLoader.cs" t="Include" />
+            <e p="PlotLoader.cs" t="Include" />
+            <e p="PlotterHelper.cs" t="Include" />
+            <e p="SineWavePlotLoader.cs" t="Include" />
+            <e p="StaticDronePlotLoader.cs" t="Include" />
+            <e p="StaticPlotHelper.cs" t="Include" />
+          </e>
           <e p="IO" t="Include">
             <e p="CsvAssetReader.cs" t="Include" />
             <e p="FileSelector.cs" t="Include" />
           </e>
           <e p="Menu" t="Include">
-            <e p="AbstractMenuNavigationController.cs" t="Include" />
             <e p="ButtonActions" t="Include">
-              <e p="AbstractExampleAction.cs" t="Include" />
               <e p="ClearAllAction.cs" t="Include" />
-              <e p="DroneExampleAction.cs" t="Include" />
-              <e p="ElectronScatteringDistributionExampleAction.cs" t="Include" />
-              <e p="IrisDataSetExampleAction.cs" t="Include" />
               <e p="SelectFileAction.cs" t="Include" />
-              <e p="SineWaveExampleAction.cs" t="Include" />
             </e>
-            <e p="DynamicPlotsMenuController.cs" t="Include" />
-            <e p="ExampleMenuNavigationController.cs" t="Include" />
-            <e p="GeographicMapsMenuController.cs" t="Include" />
-            <e p="MainMenuNavigationController.cs" t="Include" />
-            <e p="MenuNavigationController.cs" t="Include" />
-            <e p="MinimizedMenuController.cs" t="Include" />
+            <e p="MenuControllers" t="Include">
+              <e p="AbstractMenuController.cs" t="Include" />
+              <e p="DynamicPlotsMenuController.cs" t="Include" />
+              <e p="ExampleMenuController.cs" t="Include" />
+              <e p="GeographicMapsMenuController.cs" t="Include" />
+              <e p="MainMenuController.cs" t="Include" />
+              <e p="MinimizedMenuController.cs" t="Include" />
+              <e p="NavigationMenuController.cs" t="Include" />
+              <e p="StaticPlotsMenuController.cs" t="Include" />
+            </e>
           </e>
         </e>
         <e p="DataPlot" t="Include">

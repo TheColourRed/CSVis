@@ -2,9 +2,9 @@
 using Microsoft.MixedReality.Toolkit.Utilities.Solvers;
 using UnityEngine;
 
-namespace CSVis.Menu
+namespace CSVis.Menu.MenuControllers
 {
-    public class MinimizedMenuController : AbstractMenuNavigationController
+    public class MinimizedMenuController : AbstractMenuController
     {
         
         public GameObject returnMenu;

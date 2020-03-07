@@ -84,6 +84,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7072996977674101780, guid: eb8d1d970bd40894fb81a81146a4ee0d,
+        type: 3}
+      propertyPath: m_Name
+      value: CarletonUniversityExample
+      objectReference: {fileID: 0}
     - target: {fileID: 7072996977674101777, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -92,7 +97,7 @@ PrefabInstance:
     - target: {fileID: 7072996977674101777, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: InitCarletonUniversityMap
+      value: OnClickCarletonUniversityExample
       objectReference: {fileID: 0}
     - target: {fileID: 7072996977948402367, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
@@ -153,6 +158,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Mesh
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960204253085755812, guid: eb8d1d970bd40894fb81a81146a4ee0d,
+        type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4085727604004282228}
+    - target: {fileID: 8960204253085755812, guid: eb8d1d970bd40894fb81a81146a4ee0d,
+        type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClickDroneExample
       objectReference: {fileID: 0}
     - target: {fileID: 4822490630201730662, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}

@@ -260,7 +260,14 @@ PlayerSettings:
     banner: {fileID: 0}
   androidGamepadSupportLevel: 0
   resolutionDialogBanner: {fileID: 0}
-  m_BuildTargetIcons: []
+  m_BuildTargetIcons:
+  - m_BuildTarget: 
+    m_Icons:
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: a41abae5a3500a74984fe7ed90ad938b, type: 3}
+      m_Width: 128
+      m_Height: 128
+      m_Kind: 0
   m_BuildTargetPlatformIcons: []
   m_BuildTargetBatching:
   - m_BuildTarget: Standalone
@@ -556,7 +563,7 @@ PlayerSettings:
   metroCertificateNotAfter: 80a05ea8b3a1d601
   metroApplicationDescription: Template_3D
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: CSVis
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0
@@ -600,7 +607,7 @@ PlayerSettings:
       RemoteSystem: False
       RemovableStorage: False
       SharedUserCertificates: False
-      SpatialPerception: False
+      SpatialPerception: True
       SystemManagement: False
       UserAccountInformation: False
       UserDataTasks: False

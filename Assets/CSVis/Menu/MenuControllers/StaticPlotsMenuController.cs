@@ -5,9 +5,9 @@ namespace CSVis.Menu.MenuControllers
 {
     public class StaticPlotsMenuController : MonoBehaviour
     {
-        public void OnClickDroneExample()
+        public void OnClickSineWaveExample()
         {
-            gameObject.AddComponent<StaticDronePlotLoader>().LoadPlot();
+            gameObject.AddComponent<SineWavePlotLoader>().LoadPlot();
         }
         
         public void OnClickIrisExample()

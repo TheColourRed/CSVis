@@ -1,9 +1,10 @@
-﻿using DataVisualization.Plotter;
+﻿using CSVis.ExampleLoader.Helper;
+using DataVisualization.Plotter;
 using UnityEngine;
 
 namespace CSVis.ExampleLoader
 {
-    public class CarletonUniversityMapPlotterHelper : PlotLoader
+    public class CarletonUniversityMapPlotLoader : PlotLoader
     {
         private const float Longitude = 45.3831f;
         
@@ -21,8 +22,8 @@ namespace CSVis.ExampleLoader
 
         public mrMap GetCarletonMapper()
         {
-            var data = new GeoMapPlotterHelper.GeoMapData(Title, Longitude, Latitude, Zoom);
-            return gameObject.AddComponent<GeoMapPlotterHelper>().GetMrMap(data);
+            var data = new GeoMapPlotHelper.GeoMapData(Title, Longitude, Latitude, Zoom);
+            return gameObject.AddComponent<GeoMapPlotHelper>().GetMrMap(data);
         }
     }
 }

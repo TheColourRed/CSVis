@@ -970,10 +970,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 013110028f58797468ff8037f4e7ad4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainMenu: {fileID: 7368861749637849784}
+  currentMenu: {fileID: 7368861749637849784}
   exampleMenu: {fileID: 2698481044042967948, guid: 17662a2258055814588ec1ccc731c8fc,
     type: 3}
   exampleButton: {fileID: 7368861749622561933}
+  clearButton: {fileID: 7368861749406920979}
 --- !u!1 &7368861749765351933
 GameObject:
   m_ObjectHideFlags: 0

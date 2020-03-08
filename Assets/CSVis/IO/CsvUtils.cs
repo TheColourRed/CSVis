@@ -4,7 +4,7 @@ using System.IO;
 using CsvHelper;
 using UnityEngine;
 
-namespace CSVis.ExampleLoader
+namespace CSVis.IO
 {
     public static class CsvUtils
     {
@@ -57,6 +57,9 @@ namespace CSVis.ExampleLoader
             using (TextReader reader = new StringReader(csvFile.text))
             using (var csv = new CsvReader(reader))
             {
+                csv.Read();
+                csv.ReadHeader();
+                
                 Array.ForEach(indices, i => valuesByName.Add(i, new List<T>()));
                 
                 while (csv.Read())

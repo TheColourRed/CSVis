@@ -1,4 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.Data;
+using CSVis.ExampleLoader.Helper;
+using CSVis.IO;
 using DataVisualization.Plotter;
 using TimeSeriesExtension;
 using UnityEngine;
@@ -6,7 +9,7 @@ using UnityEngine;
 namespace CSVis.ExampleLoader
 {
     
-    public class DynamicDronePlotter : PlotLoader
+    public class DynamicDronePlotLoader : PlotLoader
     {
         private const string Title = "Drone Flight Path";
            
@@ -44,16 +47,16 @@ namespace CSVis.ExampleLoader
             var times = CsvUtils.GetColumnsByHeader<string>(CsvResourcePath, TimeHeader)[TimeHeader];
 
             var pointColumns =
-                new List<DynamicPlotterHelper.DynamicPlotData.PointColumns>()
+                new List<DynamicPlotHelper.DynamicPlotData.PointColumns>()
                 {
-                    new DynamicPlotterHelper.DynamicPlotData.PointColumns(
+                    new DynamicPlotHelper.DynamicPlotData.PointColumns(
                         columnsByName[XHeader],
                         columnsByName[YHeader],
                         columnsByName[ZHeader]
                     )
                 };
 
-            var data = new DynamicPlotterHelper.DynamicPlotData(
+            var data = new DynamicPlotHelper.DynamicPlotData(
                 Title,
                 pointColumns,
                 times,
@@ -62,7 +65,7 @@ namespace CSVis.ExampleLoader
                 ZHeader
             );
 
-            return gameObject.AddComponent<DynamicPlotterHelper>().GetDynamicPlotter(data);
+            return DynamicPlotHelper.GetDynamicPlotter(data);
         }
         
         public DataPlotter GetStaticDronePlotter()
@@ -79,7 +82,7 @@ namespace CSVis.ExampleLoader
                 ""
             );
 
-            return gameObject.AddComponent<StaticPlotHelper>().GetStaticPlotter(data);
+            return StaticPlotHelper.GetStaticPlotter(data);
         }
     }
 }

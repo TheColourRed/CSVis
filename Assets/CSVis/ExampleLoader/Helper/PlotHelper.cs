@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
-namespace CSVis.ExampleLoader
+namespace CSVis.ExampleLoader.Helper
 {
-    public abstract class PlotterHelper : MonoBehaviour
+    public abstract class PlotHelper : MonoBehaviour
     {
         protected const float DefaultPlotScale = 0.5f;
         
@@ -12,17 +12,17 @@ namespace CSVis.ExampleLoader
         
         private const string DataPointPath = "DataPlot/DataPoint";
         
-        protected static GameObject GetPlotContainer()
+        public static GameObject GetPlotContainer()
         {
             return Instantiate((GameObject) Resources.Load(PlotContainerPath));
         }
 
-        protected static GameObject GetDataPoint()
+        public static GameObject GetDataPoint()
         {
             return (GameObject)Resources.Load(DataPointPath);
         }
 
-        protected static GameObject GetText3D()
+        public static GameObject GetText3D()
         {
             return (GameObject)Resources.Load(Text3DPath);
         }

@@ -11,12 +11,12 @@ namespace CSVis.Menu.MenuControllers
         
         public void OnClickCarletonUniversityExample()
         {
-            gameObject.AddComponent<CarletonUniversityMapPlotterHelper>().LoadPlot();
+            gameObject.AddComponent<CarletonUniversityMapPlotLoader>().LoadPlot();
         }
 
         public void OnClickDroneExample()
         {
-//            gameObject.AddComponent<GeographicDronePlotter>().LoadPlot();
+            gameObject.AddComponent<DroneMapPlotLoader>().LoadPlot();
         }
         
     }

@@ -10,21 +10,25 @@
       <e p="Assets" t="Include">
         <e p="CSVis" t="Include">
           <e p="ExampleLoader" t="Include">
-            <e p="CarletonUniversityMapPlotterHelper.cs" t="Include" />
-            <e p="CsvUtils.cs" t="Include" />
-            <e p="DynamicDronePlotter.cs" t="Include" />
-            <e p="DynamicPlotterHelper.cs" t="Include" />
+            <e p="CarletonUniversityMapPlotLoader.cs" t="Include" />
+            <e p="DroneMapPlotLoader.cs" t="Include" />
+            <e p="DynamicDronePlotLoader.cs" t="Include" />
+            <e p="DynamicElectronScatteringPlotLoader.cs" t="Include" />
+            <e p="DynamicSineWavePlotLoader.cs" t="Include" />
             <e p="ElectronScatteringDistributionPlotHelper.cs" t="Include" />
-            <e p="GeoMapPlotterHelper.cs" t="Include" />
+            <e p="Helper" t="Include">
+              <e p="DynamicPlotHelper.cs" t="Include" />
+              <e p="GeoMapPlotHelper.cs" t="Include" />
+              <e p="PlotHelper.cs" t="Include" />
+              <e p="StaticPlotHelper.cs" t="Include" />
+            </e>
             <e p="IrisDataSetPlotLoader.cs" t="Include" />
             <e p="PlotLoader.cs" t="Include" />
-            <e p="PlotterHelper.cs" t="Include" />
             <e p="SineWavePlotLoader.cs" t="Include" />
             <e p="StaticDronePlotLoader.cs" t="Include" />
-            <e p="StaticPlotHelper.cs" t="Include" />
           </e>
           <e p="IO" t="Include">
-            <e p="CsvAssetReader.cs" t="Include" />
+            <e p="CsvUtils.cs" t="Include" />
             <e p="FileSelector.cs" t="Include" />
           </e>
           <e p="Menu" t="Include">

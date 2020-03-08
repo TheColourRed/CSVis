@@ -9,14 +9,20 @@ namespace CSVis.Menu.MenuControllers
         public void OnClickDroneExample()
         {
             Debug.Log("Plotting Dynamic Drone Data");
-            gameObject.AddComponent<DynamicDronePlotter>().LoadPlot();
+            gameObject.AddComponent<DynamicDronePlotLoader>().LoadPlot();
         }
         
-//        public void OnClickDroneExample()
-//        {
-//            Debug.Log("Plotting Dynamic Drone Data");
-//            gameObject.AddComponent<DynamicDronePlotLoader>().LoadPlot();
-//        }
+        public void OnClickSineWaveExample()
+        {
+            Debug.Log("Plotting Dynamic Sine Wave Data");
+            gameObject.AddComponent<DynamicSineWavePlotLoader>().LoadPlot();
+        }
+        
+        public void OnClickElectronDistributionExample()
+        {
+            Debug.Log("Plotting Dynamic Sine Wave Data");
+            gameObject.AddComponent<DynamicElectronScatteringPlotLoader>().LoadPlot();
+        }
         
     }
 }

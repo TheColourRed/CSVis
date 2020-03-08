@@ -84,10 +84,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4822490628354370251, guid: eb8d1d970bd40894fb81a81146a4ee0d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7072996977674101780, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: m_Name
-      value: CarletonUniversityExample
+      value: CarletonUniversityButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960204253085755809, guid: eb8d1d970bd40894fb81a81146a4ee0d,
+        type: 3}
+      propertyPath: m_Name
+      value: GeoDroneButton
       objectReference: {fileID: 0}
     - target: {fileID: 7072996977674101777, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
@@ -102,17 +112,17 @@ PrefabInstance:
     - target: {fileID: 7072996977948402367, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 16
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7072996977948402367, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7072996977948402367, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7072996977948402367, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
@@ -123,6 +133,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072996977948402367, guid: eb8d1d970bd40894fb81a81146a4ee0d,
+        type: 3}
+      propertyPath: m_text
+      value: Geographic Maps
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072996977948402367, guid: eb8d1d970bd40894fb81a81146a4ee0d,
+        type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 7072996977948402365, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
@@ -132,17 +152,17 @@ PrefabInstance:
     - target: {fileID: 7072996976326987910, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 22
+      value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 7072996976326987910, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 2
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7072996976326987910, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 3
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7072996976326987910, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
@@ -153,6 +173,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072996976326987910, guid: eb8d1d970bd40894fb81a81146a4ee0d,
+        type: 3}
+      propertyPath: m_text
+      value: Examples made from the Geographic mapping module
       objectReference: {fileID: 0}
     - target: {fileID: 7072996976326987908, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
@@ -212,42 +237,48 @@ PrefabInstance:
     - target: {fileID: 5366978931663289746, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 24
+      value: 84
       objectReference: {fileID: 0}
     - target: {fileID: 5366978931663289746, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 2
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 5366978931663289746, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 3
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 5366978931663289746, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5366978931663289746, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5366978931663289746, guid: eb8d1d970bd40894fb81a81146a4ee0d,
+        type: 3}
+      propertyPath: m_text
+      value: 'Done flight altitudes drawn as a histogram over its path across Carleton
+        University '
       objectReference: {fileID: 0}
     - target: {fileID: 6055663551617986599, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 24
+      value: 39
       objectReference: {fileID: 0}
     - target: {fileID: 6055663551617986599, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6055663551617986599, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6055663551617986599, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
@@ -258,6 +289,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6055663551617986599, guid: eb8d1d970bd40894fb81a81146a4ee0d,
+        type: 3}
+      propertyPath: m_text
+      value: A geographic map of Carleton University
       objectReference: {fileID: 0}
     - target: {fileID: 7072996977316037380, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
@@ -277,7 +313,7 @@ PrefabInstance:
     - target: {fileID: 7072996976837109945, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 18
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 7072996976837109945, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
@@ -298,6 +334,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072996976837109945, guid: eb8d1d970bd40894fb81a81146a4ee0d,
+        type: 3}
+      propertyPath: m_text
+      value: Carleton University Map
       objectReference: {fileID: 0}
     - target: {fileID: 7008437061552580506, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
@@ -342,7 +383,7 @@ PrefabInstance:
     - target: {fileID: 8960204255004353804, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 18
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 8960204255004353804, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
@@ -364,11 +405,26 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8960204255004353804, guid: eb8d1d970bd40894fb81a81146a4ee0d,
+        type: 3}
+      propertyPath: m_text
+      value: Drone Altitude Histogram
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960204253478083224, guid: eb8d1d970bd40894fb81a81146a4ee0d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 376965bc49956ec4ab1afacf7dda542d, type: 2}
     - target: {fileID: 8960204253316927153, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: d23ba105343d947499b24f101e7f8a96, type: 2}
+    - target: {fileID: 8141867945421111997, guid: eb8d1d970bd40894fb81a81146a4ee0d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e7f11d568ae17ee4cba5af84bd0a3ff2, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb8d1d970bd40894fb81a81146a4ee0d, type: 3}
 --- !u!1 &3874357556980289540 stripped

@@ -2,12 +2,28 @@
 using DataVisualization.Plotter;
 using UnityEngine;
 
-namespace CSVis.ExampleLoader
+namespace CSVis.ExampleLoader.Helper
 {
-    public class StaticPlotHelper : PlotterHelper
+    public class StaticPlotHelper : PlotHelper
     {
+        private static StaticPlotHelper instance;
+        public static StaticPlotHelper Instance
+        {
+            get
+            {
+                if( instance == null )
+                {
+                    var staticPlotHelper = new GameObject {name = "StaticPlotHelper"};
+                    instance = staticPlotHelper.AddComponent<StaticPlotHelper>();
+                }
 
-        public DataPlotter GetStaticPlotter(StaticPlotData data)
+                return instance;
+            }
+        }
+
+        private StaticPlotHelper() { }
+
+        public static DataPlotter GetStaticPlotter(StaticPlotData data)
         {
             var plotter = new GameObject().AddComponent<DataPlotter>();
             var plotContainer = GetPlotContainer();

@@ -1,14 +1,29 @@
 ﻿using System.Collections.Generic;
-using DataVisualization.Plotter;
 using TimeSeriesExtension;
 using UnityEngine;
 
-namespace CSVis.ExampleLoader
+namespace CSVis.ExampleLoader.Helper
 {
-    public class DynamicPlotterHelper : PlotterHelper
+    public class DynamicPlotHelper : PlotHelper
     {
+        private static DynamicPlotHelper instance;
+        public static DynamicPlotHelper Instance
+        {
+            get
+            {
+                if( instance == null )
+                {
+                    var staticPlotHelper = new GameObject {name = "DynamicPlotHelper"};
+                    instance = staticPlotHelper.AddComponent<DynamicPlotHelper>();
+                }
 
-        public DynamicPlotter GetDynamicPlotter(DynamicPlotData data)
+                return instance;
+            }
+        }
+
+        private DynamicPlotHelper() { }
+
+        public static DynamicPlotter GetDynamicPlotter(DynamicPlotData data)
         {
             var plotter = new GameObject().AddComponent<DynamicPlotter>();
             var graph = new TimeSeriesGraph();

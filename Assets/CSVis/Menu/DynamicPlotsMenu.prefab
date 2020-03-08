@@ -89,6 +89,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlaceHolderButton
       objectReference: {fileID: 0}
+    - target: {fileID: 4822490628354370251, guid: eb8d1d970bd40894fb81a81146a4ee0d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7072996977674101780, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: m_Name
@@ -99,20 +104,40 @@ PrefabInstance:
       propertyPath: m_Name
       value: DroneDataButton
       objectReference: {fileID: 0}
+    - target: {fileID: 4822490628354370254, guid: eb8d1d970bd40894fb81a81146a4ee0d,
+        type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4492745218887731959}
+    - target: {fileID: 4822490628354370254, guid: eb8d1d970bd40894fb81a81146a4ee0d,
+        type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClickElectronDistributionExample
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072996977674101777, guid: eb8d1d970bd40894fb81a81146a4ee0d,
+        type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4492745218887731959}
+    - target: {fileID: 7072996977674101777, guid: eb8d1d970bd40894fb81a81146a4ee0d,
+        type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClickSineWaveExample
+      objectReference: {fileID: 0}
     - target: {fileID: 7072996977948402367, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 16
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 7072996977948402367, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7072996977948402367, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7072996977948402367, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
@@ -123,6 +148,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072996977948402367, guid: eb8d1d970bd40894fb81a81146a4ee0d,
+        type: 3}
+      propertyPath: m_text
+      value: Dynamic Plots
       objectReference: {fileID: 0}
     - target: {fileID: 7072996977948402365, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
@@ -132,17 +162,17 @@ PrefabInstance:
     - target: {fileID: 7072996976326987910, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 22
+      value: 53
       objectReference: {fileID: 0}
     - target: {fileID: 7072996976326987910, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 2
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7072996976326987910, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 3
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7072996976326987910, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
@@ -153,6 +183,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072996976326987910, guid: eb8d1d970bd40894fb81a81146a4ee0d,
+        type: 3}
+      propertyPath: m_text
+      value: Dynamic plots made using the dynamic plotting library
       objectReference: {fileID: 0}
     - target: {fileID: 7072996976326987908, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
@@ -217,42 +252,53 @@ PrefabInstance:
     - target: {fileID: 5366978931663289746, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 24
+      value: 109
       objectReference: {fileID: 0}
     - target: {fileID: 5366978931663289746, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 2
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 5366978931663289746, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 3
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 5366978931663289746, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5366978931663289746, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5366978931663289746, guid: eb8d1d970bd40894fb81a81146a4ee0d,
+        type: 3}
+      propertyPath: m_text
+      value: Animated drone flight. Combined with the static plotting library to show
+        the path as well asthe flying drone.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5366978931663289746, guid: eb8d1d970bd40894fb81a81146a4ee0d,
+        type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: 103
       objectReference: {fileID: 0}
     - target: {fileID: 6055663551617986599, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 24
+      value: 43
       objectReference: {fileID: 0}
     - target: {fileID: 6055663551617986599, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 2
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6055663551617986599, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 3
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6055663551617986599, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
@@ -263,6 +309,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6055663551617986599, guid: eb8d1d970bd40894fb81a81146a4ee0d,
+        type: 3}
+      propertyPath: m_text
+      value: An animated version of the static sine wave
       objectReference: {fileID: 0}
     - target: {fileID: 7072996977316037380, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
@@ -304,6 +355,11 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7072996976837109945, guid: eb8d1d970bd40894fb81a81146a4ee0d,
+        type: 3}
+      propertyPath: m_text
+      value: Animated sine wave
+      objectReference: {fileID: 0}
     - target: {fileID: 7008437061552580506, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: m_Mesh
@@ -344,10 +400,15 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 8960204255004353793, guid: eb8d1d970bd40894fb81a81146a4ee0d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
     - target: {fileID: 8960204255004353804, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 18
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 8960204255004353804, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
@@ -369,6 +430,16 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8960204255004353804, guid: eb8d1d970bd40894fb81a81146a4ee0d,
+        type: 3}
+      propertyPath: m_text
+      value: Drone Flight Animation
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960204255004353804, guid: eb8d1d970bd40894fb81a81146a4ee0d,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
     - target: {fileID: 8960204253478083224, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -379,6 +450,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f16e55636c14cb14296c4f1fba877d98, type: 2}
+    - target: {fileID: 8141867945421111997, guid: eb8d1d970bd40894fb81a81146a4ee0d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a619b141345612f48ba057e86e8edb8f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb8d1d970bd40894fb81a81146a4ee0d, type: 3}
 --- !u!1 &2851570914651683004 stripped

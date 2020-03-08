@@ -346,6 +346,21 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4302982642809381580, guid: 17662a2258055814588ec1ccc731c8fc,
+        type: 3}
+      propertyPath: staticPlotsMenu
+      value: 
+      objectReference: {fileID: 155802100}
+    - target: {fileID: 4302982642809381580, guid: 17662a2258055814588ec1ccc731c8fc,
+        type: 3}
+      propertyPath: dynamicPlotsMenu
+      value: 
+      objectReference: {fileID: 195737172}
+    - target: {fileID: 4302982642809381580, guid: 17662a2258055814588ec1ccc731c8fc,
+        type: 3}
+      propertyPath: geographicMapMenu
+      value: 
+      objectReference: {fileID: 14515558}
     - target: {fileID: 2698481044042967951, guid: 17662a2258055814588ec1ccc731c8fc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -691,21 +706,6 @@ PrefabInstance:
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnClickDynamicPlots
       objectReference: {fileID: 0}
-    - target: {fileID: 4302982642809381580, guid: 17662a2258055814588ec1ccc731c8fc,
-        type: 3}
-      propertyPath: staticPlotsMenu
-      value: 
-      objectReference: {fileID: 155802100}
-    - target: {fileID: 4302982642809381580, guid: 17662a2258055814588ec1ccc731c8fc,
-        type: 3}
-      propertyPath: dynamicPlotsMenu
-      value: 
-      objectReference: {fileID: 195737172}
-    - target: {fileID: 4302982642809381580, guid: 17662a2258055814588ec1ccc731c8fc,
-        type: 3}
-      propertyPath: geographicMapMenu
-      value: 
-      objectReference: {fileID: 14515558}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 17662a2258055814588ec1ccc731c8fc, type: 3}
 --- !u!1 &1547131132 stripped
@@ -898,6 +898,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1fc4381bae78f1a4bbbb21fbfd30aca1, type: 3}
+--- !u!1 &2097981554 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7368861749406920979, guid: 0438ed6ada851fe40a2af4dbe56a6675,
+    type: 3}
+  m_PrefabInstance: {fileID: 7368861750139412990}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2146832171
 GameObject:
   m_ObjectHideFlags: 0
@@ -912,6 +918,7 @@ GameObject:
   - component: {fileID: 2146832175}
   - component: {fileID: 2146832174}
   - component: {fileID: 2146832173}
+  - component: {fileID: 2146832178}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1040,6 +1047,29 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &2146832178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2146832171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8eba3983fbe76c4f8e2a9383cd0ee51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SurfaceParent: {fileID: 0}
+  m_FreezeUpdates: 0
+  m_VolumeType: 1
+  m_SphereRadius: 2
+  m_HalfBoxExtents: {x: 4, y: 4, z: 4}
+  m_LodType: 1
+  m_NumUpdatesBeforeRemoval: 10
+  m_SecondsBetweenUpdates: 2.5
+  m_CurrentRenderState: 1
+  m_VisualMaterial: {fileID: 15303, guid: 0000000000000000f000000000000000, type: 0}
+  m_OcclusionMaterial: {fileID: 15302, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!1001 &5240231309555626329
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1270,11 +1300,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4171335659115595827, guid: c9412658909fd694bb2c92535cc83c7f,
-        type: 3}
-      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: InitDynamicDronePlot
       objectReference: {fileID: 0}
     - target: {fileID: 4171335657813558421, guid: c9412658909fd694bb2c92535cc83c7f,
         type: 3}
@@ -1822,11 +1847,26 @@ PrefabInstance:
       propertyPath: currentMenu
       value: 
       objectReference: {fileID: 1547131132}
+    - target: {fileID: 780337419261415978, guid: 0438ed6ada851fe40a2af4dbe56a6675,
+        type: 3}
+      propertyPath: clearButton
+      value: 
+      objectReference: {fileID: 2097981554}
     - target: {fileID: 2060391505840094259, guid: 0438ed6ada851fe40a2af4dbe56a6675,
         type: 3}
       propertyPath: updateLinkedTransform
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7368861750584464832, guid: 0438ed6ada851fe40a2af4dbe56a6675,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b39bdd50119788f4594b19441a321f65, type: 2}
+    - target: {fileID: 7354824266598880787, guid: 0438ed6ada851fe40a2af4dbe56a6675,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 65901ca9577c3b74c9a486b78eac856a, type: 2}
     m_RemovedComponents:
     - {fileID: 324434402906703553, guid: 0438ed6ada851fe40a2af4dbe56a6675, type: 3}
     - {fileID: 7368861749622561931, guid: 0438ed6ada851fe40a2af4dbe56a6675, type: 3}

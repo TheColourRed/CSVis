@@ -13,7 +13,7 @@ namespace DataVisualization.Plotter
         [Geocode]
         public string location;
         [Tooltip("mapZoomLevel smallest allowed is 2")]
-        public int zoom;
+        public float zoom;
         [Tooltip("changes size scale of plot")]
         public float plotScale = 3;
         // Object which will contain instantiated prefabs in hiearchy
@@ -46,8 +46,9 @@ namespace DataVisualization.Plotter
         //used to hold the entire map itself
         private GameObject map;
         // Start is called before the first frame update
-        void Start()
+        void Awake()
         {
+            Debug.Log("spawining map");
             map = new GameObject("Map");
             //centre the map and mapHolder
 

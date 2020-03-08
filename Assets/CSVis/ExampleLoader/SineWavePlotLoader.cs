@@ -1,4 +1,6 @@
-﻿using DataVisualization.Plotter;
+﻿using CSVis.ExampleLoader.Helper;
+using CSVis.IO;
+using DataVisualization.Plotter;
 using UnityEngine;
 
 namespace CSVis.ExampleLoader
@@ -35,7 +37,7 @@ namespace CSVis.ExampleLoader
                 YLabel
             );
 
-            return gameObject.AddComponent<StaticPlotHelper>().GetStaticPlotter(data);
+            return StaticPlotHelper.GetStaticPlotter(data);
         }
 
     }

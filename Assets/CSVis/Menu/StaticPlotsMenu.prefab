@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8686c2a51f7c4285b14cc47b985a7095, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentMenu: {fileID: 5851418985978465625}
 --- !u!1001 &3682888785181316210
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -118,22 +117,22 @@ PrefabInstance:
     - target: {fileID: 7072996977674101777, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnClickDroneExample
+      value: OnClickSineWaveExample
       objectReference: {fileID: 0}
     - target: {fileID: 7072996977948402367, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 16
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7072996977948402367, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7072996977948402367, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7072996977948402367, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
@@ -144,6 +143,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072996977948402367, guid: eb8d1d970bd40894fb81a81146a4ee0d,
+        type: 3}
+      propertyPath: m_text
+      value: Static Plots
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072996977948402367, guid: eb8d1d970bd40894fb81a81146a4ee0d,
+        type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 7072996977948402365, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
@@ -153,17 +162,17 @@ PrefabInstance:
     - target: {fileID: 7072996976326987910, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 22
+      value: 52
       objectReference: {fileID: 0}
     - target: {fileID: 7072996976326987910, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 2
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7072996976326987910, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 3
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7072996976326987910, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
@@ -174,6 +183,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072996976326987910, guid: eb8d1d970bd40894fb81a81146a4ee0d,
+        type: 3}
+      propertyPath: m_text
+      value: Example plots made using the static plotting library
       objectReference: {fileID: 0}
     - target: {fileID: 7072996976326987908, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
@@ -193,17 +207,17 @@ PrefabInstance:
     - target: {fileID: 4822490630201730662, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 18
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 4822490630201730662, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4822490630201730662, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4822490630201730662, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
@@ -214,6 +228,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4822490630201730662, guid: eb8d1d970bd40894fb81a81146a4ee0d,
+        type: 3}
+      propertyPath: m_text
+      value: Electron Scattering
       objectReference: {fileID: 0}
     - target: {fileID: 4822490630201730664, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
@@ -238,42 +257,47 @@ PrefabInstance:
     - target: {fileID: 5366978931663289746, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 24
+      value: 56
       objectReference: {fileID: 0}
     - target: {fileID: 5366978931663289746, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 2
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5366978931663289746, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 3
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5366978931663289746, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5366978931663289746, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5366978931663289746, guid: eb8d1d970bd40894fb81a81146a4ee0d,
+        type: 3}
+      propertyPath: m_text
+      value: Showcases clustering of dataset features in 3 dimentions
       objectReference: {fileID: 0}
     - target: {fileID: 6055663551617986599, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 24
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 6055663551617986599, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6055663551617986599, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6055663551617986599, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
@@ -284,6 +308,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6055663551617986599, guid: eb8d1d970bd40894fb81a81146a4ee0d,
+        type: 3}
+      propertyPath: m_text
+      value: Simple 2D sine wave
       objectReference: {fileID: 0}
     - target: {fileID: 7072996977316037380, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
@@ -303,17 +332,17 @@ PrefabInstance:
     - target: {fileID: 7072996976837109945, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 18
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7072996976837109945, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7072996976837109945, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7072996976837109945, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
@@ -324,6 +353,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072996976837109945, guid: eb8d1d970bd40894fb81a81146a4ee0d,
+        type: 3}
+      propertyPath: m_text
+      value: Sine Wave
       objectReference: {fileID: 0}
     - target: {fileID: 7008437061552580506, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
@@ -333,27 +367,32 @@ PrefabInstance:
     - target: {fileID: 8416859374229864184, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 24
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 8416859374229864184, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 2
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8416859374229864184, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 3
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8416859374229864184, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8416859374229864184, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416859374229864184, guid: eb8d1d970bd40894fb81a81146a4ee0d,
+        type: 3}
+      propertyPath: m_text
+      value: Electron Scattering distribution plot made up of 2500 points
       objectReference: {fileID: 0}
     - target: {fileID: 9165853754685516335, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
@@ -368,7 +407,7 @@ PrefabInstance:
     - target: {fileID: 8960204255004353804, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 18
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 8960204255004353804, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
@@ -390,6 +429,11 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8960204255004353804, guid: eb8d1d970bd40894fb81a81146a4ee0d,
+        type: 3}
+      propertyPath: m_text
+      value: Iris data set
+      objectReference: {fileID: 0}
     - target: {fileID: 8960204253478083224, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -400,6 +444,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 177b80b937fb5554ebe743dd0144344a, type: 2}
+    - target: {fileID: 8141867945421111997, guid: eb8d1d970bd40894fb81a81146a4ee0d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a8bea8e3c6a08954e88138af226cc09f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb8d1d970bd40894fb81a81146a4ee0d, type: 3}
 --- !u!1 &5851418985978465625 stripped

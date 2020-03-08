@@ -219,6 +219,11 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4822490630201730662, guid: eb8d1d970bd40894fb81a81146a4ee0d,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
     - target: {fileID: 4822490630201730664, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: m_Mesh
@@ -380,6 +385,11 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 8960204255004353793, guid: eb8d1d970bd40894fb81a81146a4ee0d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
     - target: {fileID: 8960204255004353804, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -410,6 +420,11 @@ PrefabInstance:
       propertyPath: m_text
       value: Drone Altitude Histogram
       objectReference: {fileID: 0}
+    - target: {fileID: 8960204255004353804, guid: eb8d1d970bd40894fb81a81146a4ee0d,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
     - target: {fileID: 8960204253478083224, guid: eb8d1d970bd40894fb81a81146a4ee0d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -425,6 +440,21 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: e7f11d568ae17ee4cba5af84bd0a3ff2, type: 2}
+    - target: {fileID: 8368590930425805259, guid: eb8d1d970bd40894fb81a81146a4ee0d,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4628592185990149018, guid: eb8d1d970bd40894fb81a81146a4ee0d,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 121674032154459902, guid: eb8d1d970bd40894fb81a81146a4ee0d,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb8d1d970bd40894fb81a81146a4ee0d, type: 3}
 --- !u!1 &3874357556980289540 stripped

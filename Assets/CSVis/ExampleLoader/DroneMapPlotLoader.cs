@@ -28,7 +28,7 @@ namespace CSVis.ExampleLoader
         private const string CsvResourcePath = "Data/FlightData2reducedByHalf";
         
         private const float Zoom = 15.5f;
-        
+
         private const float SpawnScale = 0.001f;
         
         private const float HeightScaleMax = 0.2f;
@@ -46,7 +46,7 @@ namespace CSVis.ExampleLoader
             var geoMapPlotterHelper = gameObject.AddComponent<GeoMapPlotHelper>();
             var columnsByName = CsvUtils.GetColumnsByIndex<float>(CsvResourcePath, LatitudeIndex, LongitudeIndex, AltitudeIndex);
             var count = columnsByName[AltitudeIndex].Count;
-            var colors = GetColors(count);
+            var colors = Enumerable.Range(0, count).Select(i => new Color(138,43,226)).ToList();
 
             var locationStrings = Enumerable.Range(0, count).Select(i =>
                 columnsByName[LongitudeIndex][i].ToString("n4") + ", " + columnsByName[LatitudeIndex][i].ToString("n4")
@@ -64,7 +64,7 @@ namespace CSVis.ExampleLoader
                 SpawnScale,
                 HeightScaleMax,
                 HeightScaleMin,
-                PlotHelper.GetPlotContainer()
+                PlotHelper.GetPlotHolder()
             );
 
             return geoMapPlotterHelper.GetMrMap(data);
@@ -91,7 +91,6 @@ namespace CSVis.ExampleLoader
                     r += interval;
                     b -= interval;
                 }
-                Debug.LogFormat("{0}, {1}, {2}", r, g, b);
                 return new Color(r, g, b);
             }).ToList();
         }

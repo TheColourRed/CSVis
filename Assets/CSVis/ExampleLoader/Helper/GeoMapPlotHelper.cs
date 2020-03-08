@@ -86,7 +86,7 @@ namespace CSVis.ExampleLoader.Helper
                 Zoom = zoom;
                 Title = title;
                 PlotScale = GeoDefaultPlotScale;
-                PlotContainer = GetPlotContainer();
+                PlotContainer = GetPlotHolder();
             }
             
             public GeoMapData(string title, float longitude, float latitude, float zoom, float plotScale, List<string> locationStrings, List<float> heightValues, List<Color> colors, float spawnScale, float heightScaleMax, float heightScaleMin, GameObject plotContainer)

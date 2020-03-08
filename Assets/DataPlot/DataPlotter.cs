@@ -245,7 +245,6 @@ namespace DataVisualization.Plotter
         private void InitalizeInteraction(float xMax, float yMax, float zMax, float xMin, float yMin, float zMin)
         {
             PointHolder.AddComponent<BoxCollider>();
-            PointHolder.AddComponent<SpatialMappingCollider>();
             
             PointHolder.transform.gameObject.GetComponent<BoxCollider>().size = new Vector3(normalize(xMax, xMax, xMin), normalize(yMax, yMax, yMin), normalize(zMax, zMax, zMin)) * plotScale;
 

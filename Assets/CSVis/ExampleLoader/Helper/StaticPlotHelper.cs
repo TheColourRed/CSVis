@@ -26,7 +26,7 @@ namespace CSVis.ExampleLoader.Helper
         public static DataPlotter GetStaticPlotter(StaticPlotData data)
         {
             var plotter = new GameObject().AddComponent<DataPlotter>();
-            var plotContainer = GetPlotContainer();
+            var plotContainer = GetPlotHolder();
 
             plotter.transform.parent = plotContainer.transform;
             plotter.PointHolder = plotContainer;

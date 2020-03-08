@@ -36,7 +36,7 @@ namespace CSVis.ExampleLoader.Helper
 
             plotter.Graph = graph;
             
-            plotter.PointHolder = GetPlotContainer();
+            plotter.PointHolder = GetPlotHolder();
             plotter.PointPrefab = data.PointObject.transform;
             plotter.Text = GetText3D();
             

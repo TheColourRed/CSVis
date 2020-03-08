@@ -12,6 +12,8 @@ namespace CSVis.Menu.MenuControllers
         
         public GameObject clearButton;
 
+        public GameObject selectFileButton;
+
         private void OnClickViewExample()
         {
             Debug.Log("View Example Button pressed");
@@ -27,11 +29,18 @@ namespace CSVis.Menu.MenuControllers
             }
         }
 
+        public void OnClickFileSelect()
+        {
+            // Not yet configured
+        }
+
         private void InitButtonListeners()
         {
+            var file = selectFileButton.GetComponent<Interactable>();
             var example = exampleButton.GetComponent<Interactable>();
             var clear = clearButton.GetComponent<Interactable>();
-            
+
+            file.OnClick.AddListener(OnClickFileSelect);
             example.OnClick.AddListener(OnClickViewExample);
             clear.OnClick.AddListener(OnClickClear);
         }

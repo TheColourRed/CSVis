@@ -30,12 +30,9 @@
           <e p="IO" t="Include">
             <e p="CsvUtils.cs" t="Include" />
             <e p="FileSelector.cs" t="Include" />
+            <e p="SelectFileAction.cs" t="Include" />
           </e>
           <e p="Menu" t="Include">
-            <e p="ButtonActions" t="Include">
-              <e p="ClearAllAction.cs" t="Include" />
-              <e p="SelectFileAction.cs" t="Include" />
-            </e>
             <e p="MenuControllers" t="Include">
               <e p="AbstractMenuController.cs" t="Include" />
               <e p="DynamicPlotsMenuController.cs" t="Include" />
@@ -44,6 +41,7 @@
               <e p="MainMenuController.cs" t="Include" />
               <e p="MinimizedMenuController.cs" t="Include" />
               <e p="NavigationMenuController.cs" t="Include" />
+              <e p="PlotMenuController.cs" t="Include" />
               <e p="StaticPlotsMenuController.cs" t="Include" />
             </e>
           </e>

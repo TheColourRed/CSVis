@@ -12,9 +12,11 @@ namespace CSVis.ExampleLoader.Helper
         
         private const string DataPointPath = "DataPlot/DataPoint";
         
-        public static GameObject GetPlotContainer()
+        public static GameObject GetPlotHolder()
         {
-            return Instantiate((GameObject) Resources.Load(PlotContainerPath));
+            return Instantiate((GameObject) Resources.Load(PlotContainerPath))
+                .transform.Find("PlotHolder")
+                .gameObject;
         }
 
         public static GameObject GetDataPoint()

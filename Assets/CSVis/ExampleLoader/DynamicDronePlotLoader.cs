@@ -3,7 +3,6 @@ using System.Data;
 using CSVis.ExampleLoader.Helper;
 using CSVis.IO;
 using DataVisualization.Plotter;
-using TimeSeriesExtension;
 using UnityEngine;
 
 namespace CSVis.ExampleLoader

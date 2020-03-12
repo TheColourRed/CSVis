@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using TimeSeriesExtension;
+using DataVisualization.Plotter;
 using UnityEngine;
 
 namespace CSVis.ExampleLoader.Helper
@@ -26,7 +26,7 @@ namespace CSVis.ExampleLoader.Helper
         public static DynamicPlotter GetDynamicPlotter(DynamicPlotData data)
         {
             var plotter = new GameObject().AddComponent<DynamicPlotter>();
-            var graph = new TimeSeriesGraph();
+            var graph = new DynamicGraph();
 
             data.Points.ForEach(point =>
                 graph.AddPlotPoint(new PlotPoint(point.XColumn, point.YColumn, point.ZColumn))

@@ -2,7 +2,7 @@
 using System.Linq;
 using CSVis.ExampleLoader.Helper;
 using CSVis.IO;
-using TimeSeriesExtension;
+using DataVisualization.Plotter;
 
 namespace CSVis.ExampleLoader
 {

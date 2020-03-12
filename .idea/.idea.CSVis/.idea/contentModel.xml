@@ -46,22 +46,25 @@
             </e>
           </e>
         </e>
-        <e p="DataPlot" t="Include">
-          <e p="DataPlotter.cs" t="Include" />
-        </e>
-        <e p="DynamicPlot" t="Include">
-          <e p="DataParser.cs" t="Include" />
-          <e p="DynamicPlotter.cs" t="Include" />
-          <e p="MyPlot.cs" t="Include" />
-          <e p="PlotManip.cs" t="Include" />
-          <e p="PlotPoint.cs" t="Include" />
-          <e p="PlotPointLL.cs" t="Include" />
-          <e p="TimeSeriesGraph.cs" t="Include" />
-          <e p="TimeSeriesPlotter.cs" t="Include" />
-        </e>
-        <e p="GeoPlot" t="Include">
-          <e p="HistoGramOnMap.cs" t="Include" />
-          <e p="mrMap.cs" t="Include" />
+        <e p="DataVisualizationToolkit" t="Include">
+          <e p="DataPlot" t="Include">
+            <e p="DataPlotter.cs" t="Include" />
+          </e>
+          <e p="DynamicPlot" t="Include">
+            <e p="DataParser.cs" t="Include" />
+            <e p="DroneAndSineExample.cs" t="Include" />
+            <e p="DronePlotExample.cs" t="Include" />
+            <e p="DynamicGraph.cs" t="Include" />
+            <e p="DynamicPlotter.cs" t="Include" />
+            <e p="PlotPoint.cs" t="Include" />
+          </e>
+          <e p="GeoPlot" t="Include">
+            <e p="HistoGramOnMap.cs" t="Include" />
+            <e p="mrMap.cs" t="Include" />
+          </e>
+          <e p="Utilities" t="Include">
+            <e p="Util.cs" t="Include" />
+          </e>
         </e>
         <e p="link.xml" t="Include" />
         <e p="Mapbox" t="Include">
@@ -365,9 +368,6 @@
             <e p="Editor" t="Include">
               <e p="AddMonoBehavioursModifierDrawer.cs" t="Include" />
               <e p="AtlasTemplateGenerator.cs" t="Include" />
-              <e p="Build" t="Include">
-                <e p="Mapbox_iOS_build.cs" t="Include" />
-              </e>
               <e p="ClearFileCache.cs" t="Include" />
               <e p="EditorHelper.cs" t="Include" />
               <e p="FactoryEditor.cs" t="Include" />

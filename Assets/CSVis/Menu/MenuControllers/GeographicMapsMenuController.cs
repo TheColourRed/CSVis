@@ -19,5 +19,10 @@ namespace CSVis.Menu.MenuControllers
             gameObject.AddComponent<DroneMapPlotLoader>().LoadPlot();
         }
         
+        public void OnClickParliamentExample()
+        {
+            gameObject.AddComponent<Parliament3DTerrainMapLoader>().LoadPlot();
+        }
+        
     }
 }

@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using CsvHelper;
+using CsvHelper.Configuration;
 using UnityEngine;
 
 namespace CSVis.IO
@@ -70,5 +72,42 @@ namespace CSVis.IO
 
             return valuesByName;
         }
+
+        /// <summary>
+        /// Returns a dictionary of column value lists by their indices from the csv file contents 
+        /// </summary>
+        public static Dictionary<int, List<T>> GetContentColumnsByIndex<T>(string csvFileContent, params int[] indices)
+        {
+            var valuesByName = new Dictionary<int, List<T>>();
+            
+            using (TextReader reader = new StringReader(csvFileContent))
+            using (var csv = new CsvReader(reader))
+            {
+                csv.Read();
+                csv.ReadHeader();
+                
+                Array.ForEach(indices, i => valuesByName.Add(i, new List<T>()));
+                
+                while (csv.Read())
+                {
+                    Array.ForEach(indices, i => valuesByName[i].Add(csv.GetField<T>(i)));
+                }
+            }
+
+            return valuesByName;
+        }
+        
+        public static List<string> GetColumnHeaders(string csvFileContent)
+        {
+            using (TextReader reader = new StringReader(csvFileContent))
+            using (var csv = new CsvReader(reader))
+            {
+                csv.Read();
+                csv.ReadHeader();
+
+                return new List<string>(csv.GetRecords<string>());
+            }
+        }
+
     }
 }

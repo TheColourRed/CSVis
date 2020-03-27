@@ -1,4 +1,7 @@
-﻿using Microsoft.MixedReality.Toolkit.UI;
+﻿using CSVis.IO;
+using Microsoft.MixedReality.Toolkit;
+using Microsoft.MixedReality.Toolkit.UI;
+using TMPro;
 using UnityEngine;
 
 namespace CSVis.Menu.MenuControllers
@@ -31,7 +34,8 @@ namespace CSVis.Menu.MenuControllers
 
         public void OnClickFileSelect()
         {
-            // Not yet configured
+            var fileSelector = new FileSelector();
+            fileSelector.SelectFile();
         }
 
         private void InitButtonListeners()

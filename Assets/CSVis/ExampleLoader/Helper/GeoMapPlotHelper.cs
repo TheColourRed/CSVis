@@ -46,7 +46,7 @@ namespace CSVis.ExampleLoader.Helper
             
             map.locationStrings = data.LocationStrings.ToArray();
             map.heightValues = data.HeightValues;
-            map.colors = data.Colors;
+            map.colours = data.Colors;
             map.spawnScale = data.SpawnScale;    
             map.HeightScaleMax = data.HeightScaleMax;
             map.HeightScaleMin = data.HeightScaleMin;
@@ -61,7 +61,7 @@ namespace CSVis.ExampleLoader.Helper
 
             public float Latitude { get; set; }
 
-            public float Zoom { get; set; }
+            public int Zoom { get; set; }
 
             public float PlotScale { get; set; }
             
@@ -79,7 +79,7 @@ namespace CSVis.ExampleLoader.Helper
 
             public GameObject PlotContainer { get; set; }
 
-            public GeoMapData(string title, float longitude, float latitude, float zoom)
+            public GeoMapData(string title, float longitude, float latitude, int zoom)
             {
                 Longitude = longitude;
                 Latitude = latitude;
@@ -89,7 +89,7 @@ namespace CSVis.ExampleLoader.Helper
                 PlotContainer = GetPlotHolder();
             }
             
-            public GeoMapData(string title, float longitude, float latitude, float zoom, float plotScale, List<string> locationStrings, List<float> heightValues, List<Color> colors, float spawnScale, float heightScaleMax, float heightScaleMin, GameObject plotContainer)
+            public GeoMapData(string title, float longitude, float latitude, int zoom, float plotScale, List<string> locationStrings, List<float> heightValues, List<Color> colors, float spawnScale, float heightScaleMax, float heightScaleMin, GameObject plotContainer)
             {
                 Title = title;
                 Longitude = longitude;

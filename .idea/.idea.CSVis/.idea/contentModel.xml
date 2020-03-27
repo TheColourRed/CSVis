@@ -14,6 +14,7 @@
             <e p="DroneMapPlotLoader.cs" t="Include" />
             <e p="DynamicDronePlotLoader.cs" t="Include" />
             <e p="DynamicElectronScatteringPlotLoader.cs" t="Include" />
+            <e p="DynamicGeometricRotationPlotLoader.cs" t="Include" />
             <e p="DynamicSineWavePlotLoader.cs" t="Include" />
             <e p="ElectronScatteringDistributionPlotHelper.cs" t="Include" />
             <e p="Helper" t="Include">
@@ -23,12 +24,14 @@
               <e p="StaticPlotHelper.cs" t="Include" />
             </e>
             <e p="IrisDataSetPlotLoader.cs" t="Include" />
+            <e p="Parliament3DTerrainMapLoader.cs" t="Include" />
             <e p="PlotLoader.cs" t="Include" />
             <e p="SineWavePlotLoader.cs" t="Include" />
             <e p="StaticDronePlotLoader.cs" t="Include" />
           </e>
           <e p="IO" t="Include">
             <e p="CsvUtils.cs" t="Include" />
+            <e p="CustomFilePlotLoader.cs" t="Include" />
             <e p="FileSelector.cs" t="Include" />
             <e p="SelectFileAction.cs" t="Include" />
           </e>
@@ -46,22 +49,25 @@
             </e>
           </e>
         </e>
-        <e p="DataPlot" t="Include">
-          <e p="DataPlotter.cs" t="Include" />
-        </e>
-        <e p="DynamicPlot" t="Include">
-          <e p="DataParser.cs" t="Include" />
-          <e p="DynamicPlotter.cs" t="Include" />
-          <e p="MyPlot.cs" t="Include" />
-          <e p="PlotManip.cs" t="Include" />
-          <e p="PlotPoint.cs" t="Include" />
-          <e p="PlotPointLL.cs" t="Include" />
-          <e p="TimeSeriesGraph.cs" t="Include" />
-          <e p="TimeSeriesPlotter.cs" t="Include" />
-        </e>
-        <e p="GeoPlot" t="Include">
-          <e p="HistoGramOnMap.cs" t="Include" />
-          <e p="mrMap.cs" t="Include" />
+        <e p="DataVisualizationToolkit" t="Include">
+          <e p="DataPlot" t="Include">
+            <e p="DataPlotter.cs" t="Include" />
+          </e>
+          <e p="DynamicPlot" t="Include">
+            <e p="DataParser.cs" t="Include" />
+            <e p="DroneAndSineExample.cs" t="Include" />
+            <e p="DronePlotExample.cs" t="Include" />
+            <e p="DynamicGraph.cs" t="Include" />
+            <e p="DynamicPlotter.cs" t="Include" />
+            <e p="PlotPoint.cs" t="Include" />
+          </e>
+          <e p="GeoPlot" t="Include">
+            <e p="HistoGramOnMap.cs" t="Include" />
+            <e p="mrMap.cs" t="Include" />
+          </e>
+          <e p="Utilities" t="Include">
+            <e p="Util.cs" t="Include" />
+          </e>
         </e>
         <e p="link.xml" t="Include" />
         <e p="Mapbox" t="Include">
@@ -365,9 +371,6 @@
             <e p="Editor" t="Include">
               <e p="AddMonoBehavioursModifierDrawer.cs" t="Include" />
               <e p="AtlasTemplateGenerator.cs" t="Include" />
-              <e p="Build" t="Include">
-                <e p="Mapbox_iOS_build.cs" t="Include" />
-              </e>
               <e p="ClearFileCache.cs" t="Include" />
               <e p="EditorHelper.cs" t="Include" />
               <e p="FactoryEditor.cs" t="Include" />

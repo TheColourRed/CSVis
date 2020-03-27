@@ -6,6 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System;
+using CSVis.ExampleLoader;
 using UnityEngine.WSA;
 using UnityEngine.UI;
 using TMPro;
@@ -18,7 +19,7 @@ using Windows.Storage.Pickers;
 
 namespace CSVis.IO
 {
-    public class FileSelector
+    public class FileSelector : MonoBehaviour
     {
         private string fileName;
 
@@ -39,9 +40,6 @@ namespace CSVis.IO
             fileName = string.Empty;
             fileContent = string.Empty;
 
-            //FIXME The async inside the async invoke on ui thread does not wait and returns before file selection...
-            // Instead of returning the strings with the fields maybe return the file instead?
-            // Or just get the text here (wait for it) and then return that.
 #if ENABLE_WINMD_SUPPORT
         UnityEngine.WSA.Application.InvokeOnUIThread(OpenFileAsync, true);  
 #else
@@ -53,6 +51,7 @@ namespace CSVis.IO
         void ThreadCallback()
         {
             UnityEngine.Debug.LogFormat("ThreadCallback() on thread: \t{0}", Thread.CurrentThread.ManagedThreadId);
+            gameObject.AddComponent<CustomFilePlotLoader>().PlotCustomFile(fileName, fileContent);
         }
 
 #if ENABLE_WINMD_SUPPORT
@@ -69,7 +68,7 @@ namespace CSVis.IO
             
             if ( file != null )
             {
-                // Application now has read/write access to the picked file 
+                // Application now has read/write access to the picked file
                 fileName = file.DisplayName;
                 fileContent = await Windows.Storage.FileIO.ReadTextAsync(file);
             }

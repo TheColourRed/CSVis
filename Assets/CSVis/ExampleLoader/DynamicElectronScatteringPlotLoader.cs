@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using CSVis.ExampleLoader.Helper;
 using CSVis.IO;
-using TimeSeriesExtension;
+using DataVisualization.Plotter;
 
 namespace CSVis.ExampleLoader
 {

@@ -27,7 +27,7 @@ namespace CSVis.ExampleLoader
         
         private const string CsvResourcePath = "Data/FlightData2reducedByHalf";
         
-        private const float Zoom = 15.5f;
+        private const int Zoom = 15;
 
         private const float SpawnScale = 0.001f;
         

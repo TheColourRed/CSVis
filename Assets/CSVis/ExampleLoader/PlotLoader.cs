@@ -35,34 +35,5 @@ namespace CSVis.ExampleLoader
             manipulationHandler.ConstraintOnRotation = RotationConstraintType.YAxisOnly;
         }
 
-        public class PointsColumns3D
-        {
-            public List<float> X { get; }
-
-            public List<float> Y { get; }
-            
-            public List<float> Z { get; }
-
-            public PointsColumns3D(List<float> x, List<float> y, List<float> z)
-            {
-                X = x;
-                Y = y;
-                Z = z;
-            }
-        }
-
-        public class PointsColumns2D
-        {
-            public List<float> X { get; }
-
-            public List<float> Y { get; }
-
-            public PointsColumns2D(List<float> x, List<float> y)
-            {
-                X = x;
-                Y = y;
-            }
-        }
-        
     }
 }

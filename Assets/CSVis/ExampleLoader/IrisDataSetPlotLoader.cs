@@ -1,4 +1,5 @@
-﻿using CSVis.ExampleLoader.Helper;
+﻿using System.Linq;
+using CSVis.ExampleLoader.Helper;
 using CSVis.IO;
 using DataVisualization.Plotter;
 using UnityEngine;
@@ -15,12 +16,20 @@ namespace CSVis.ExampleLoader
         private const string YHeader = "sepal.length";
         
         private const string ZHeader = "petal.width";
-               
+
+        private const string ClassHeader = "variety";
+        
         private const string XName = "Petal Length";
 
         private const string YName = "Sepal Length";
-        
+
         private const string ZName = "Petal Width";
+
+        private const string ClassOne = "Setosa";
+        
+        private const string ClassTwo = "Versicolor";
+        
+        private const string ClassThree = "Virginica";
 
         private const string CsvResourcePath = "Data/iris";
 
@@ -33,6 +42,7 @@ namespace CSVis.ExampleLoader
         public DataPlotter GetIrisDataPlotter()
         {
             var columnsByName = CsvUtils.GetColumnsByHeader<float>(CsvResourcePath, XHeader, YHeader, ZHeader);
+            var classByName = CsvUtils.GetColumnsByHeader<string>(CsvResourcePath, ClassHeader)[ClassHeader];
 
             var data = new StaticPlotHelper.StaticPlotData(
                 Title,
@@ -44,7 +54,24 @@ namespace CSVis.ExampleLoader
                 ZName
             );
 
+            data.Colors = classByName.Select(GetColorByClass).ToList();
+            
             return StaticPlotHelper.GetStaticPlotter(data);
+        }
+
+        private Color GetColorByClass(string className) 
+        {
+            switch (className)
+            {
+                case ClassOne:
+                    return new Color(255, 0, 0);
+                case ClassTwo:
+                    return new Color(0, 255, 0);
+                case ClassThree:
+                    return new Color(0, 0, 255);
+                default:
+                    return new Color(0, 0, 0);
+            }
         }
     }
 }

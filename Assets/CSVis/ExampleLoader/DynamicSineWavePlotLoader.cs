@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using CSVis.ExampleLoader.Helper;
 using CSVis.IO;
@@ -13,33 +14,45 @@ namespace CSVis.ExampleLoader
         private const string XLabel = "X";
        
         private const string YLabel = "Y";
+        
+        private const string ZLabel = "Z";
        
-        private const int XIndex = 0;
+        private const int XOffset = 0;
 
-        private const int YIndex = 1;
+        private const int YOffset = 1;
+        
+        private const int ZOffset = 2;
 
-        private const string CsvResourcePath = "Data/sine_1000";
+        private const int NPoints = 10;
+        
+        private const string CsvResourcePath = "Data/10point_distributed_sinewave";
         
         public override void LoadPlot()
         {
             var plot = Instantiate(GetSineWavePlotter());
             SetSpawn(plot.PointHolder);
+        
         }
 
         public DynamicPlotter GetSineWavePlotter()
         {
-            var columnsByName = CsvUtils.GetColumnsByIndex<float>(CsvResourcePath, XIndex, YIndex);
-            var capacity = columnsByName[XIndex].Count;
+
+            var columnsByIndex = CsvUtils.GetColumnsByIndex<float>(CsvResourcePath, Enumerable.Range(0, NPoints * 3).ToArray());
+            var capacity = columnsByIndex[0].Count;
             var pointColumns = new List<DynamicPlotHelper.DynamicPlotData.PointColumns>();
+
+            for (int i = 0; i < NPoints; i++)
+            {
+                 int offset = i * 3; 
+                pointColumns.Add(
+                    new DynamicPlotHelper.DynamicPlotData.PointColumns(
+                        columnsByIndex[offset + XOffset],
+                        columnsByIndex[offset + YOffset],
+                        columnsByIndex[offset + ZOffset]
+                    ));
+            }
             
-            pointColumns.Add(
-                new DynamicPlotHelper.DynamicPlotData.PointColumns(
-                    columnsByName[XIndex],
-                    columnsByName[YIndex],
-                    Enumerable.Range(0, capacity).Select(i => 0.5f).ToList()
-                ));
-            
-            var times = CsvUtils.GetColumnsByIndex<string>(CsvResourcePath, XIndex)[XIndex];
+            var times = Enumerable.Range(0, capacity).Select(i => i.ToString()).ToList();
 
             var data = new DynamicPlotHelper.DynamicPlotData(
                 Title,
@@ -47,7 +60,7 @@ namespace CSVis.ExampleLoader
                 times,
                 XLabel,
                 YLabel,
-                ""
+                ZLabel
             );
 
             return DynamicPlotHelper.GetDynamicPlotter(data);

@@ -21,20 +21,19 @@ namespace CSVis.ExampleLoader
         private const string TimeHeader = "time(local time)";
 
         private const string CsvResourcePath = "Data/FlightData2";
+        
+        private const string DroneObjectPath = "CSVis/Drone";
 
         public override void LoadPlot()
         {
             var dynamicPlotter = GetDynamicDronePlotter();
             var staticPlotter = GetStaticDronePlotter();
 
-            dynamicPlotter.PlotScale = 1;
-            staticPlotter.plotScale = 1;
-
             var pointHolder = dynamicPlotter.PointHolder;
             staticPlotter.PointHolder = pointHolder;
-            
-            var staticExample = Instantiate(staticPlotter);
+
             var dynamicExample = Instantiate(dynamicPlotter);
+            var staticExample = Instantiate(staticPlotter);
 
             SetSpawn(dynamicExample.PointHolder);
             SetSpawn(staticExample.PointHolder);
@@ -63,6 +62,8 @@ namespace CSVis.ExampleLoader
                 YHeader,
                 ZHeader
             );
+
+            data.PointObject = (GameObject) Resources.Load(DroneObjectPath);
 
             return DynamicPlotHelper.GetDynamicPlotter(data);
         }

@@ -47,6 +47,11 @@ namespace CSVis.ExampleLoader.Helper
                 plotter.zName = data.ZName;
             }
 
+            if (data.Colors != null && data.Colors.Count > 0)
+            {
+                plotter.colours = data.Colors;
+            }
+
             plotter.plotScale = data.PlotScale;
 
             return plotter;
@@ -67,6 +72,8 @@ namespace CSVis.ExampleLoader.Helper
             public List<float> YColumn { get; set; }
 
             public List<float> XColumn { get; set; }
+            
+            public List<Color> Colors { get; set; }
 
             public GameObject PointObject { get; set; }
 

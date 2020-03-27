@@ -14,6 +14,7 @@
             <e p="DroneMapPlotLoader.cs" t="Include" />
             <e p="DynamicDronePlotLoader.cs" t="Include" />
             <e p="DynamicElectronScatteringPlotLoader.cs" t="Include" />
+            <e p="DynamicGeometricRotationPlotLoader.cs" t="Include" />
             <e p="DynamicSineWavePlotLoader.cs" t="Include" />
             <e p="ElectronScatteringDistributionPlotHelper.cs" t="Include" />
             <e p="Helper" t="Include">
@@ -23,12 +24,14 @@
               <e p="StaticPlotHelper.cs" t="Include" />
             </e>
             <e p="IrisDataSetPlotLoader.cs" t="Include" />
+            <e p="Parliament3DTerrainMapLoader.cs" t="Include" />
             <e p="PlotLoader.cs" t="Include" />
             <e p="SineWavePlotLoader.cs" t="Include" />
             <e p="StaticDronePlotLoader.cs" t="Include" />
           </e>
           <e p="IO" t="Include">
             <e p="CsvUtils.cs" t="Include" />
+            <e p="CustomFilePlotLoader.cs" t="Include" />
             <e p="FileSelector.cs" t="Include" />
             <e p="SelectFileAction.cs" t="Include" />
           </e>

@@ -18,10 +18,10 @@ namespace CSVis.Menu.MenuControllers
             gameObject.AddComponent<DynamicSineWavePlotLoader>().LoadPlot();
         }
         
-        public void OnClickElectronDistributionExample()
+        public void OnClickGeometricRotationExample()
         {
-            Debug.Log("Plotting Dynamic Sine Wave Data");
-            gameObject.AddComponent<DynamicElectronScatteringPlotLoader>().LoadPlot();
+            Debug.Log("Plotting Geometric Rotations Data");
+            gameObject.AddComponent<DynamicGeometricRotationExample>().LoadPlot();
         }
         
     }

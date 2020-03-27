@@ -72,7 +72,7 @@ namespace DataVisualization.Plotter
 
                 if (current_x > xmax) xmax = current_x;
                 if (current_y > ymax) ymax = current_y;
-                if (current_y > zmax) zmax = current_z;
+                if (current_z > zmax) zmax = current_z;
             }
 
             XMax = xmax;

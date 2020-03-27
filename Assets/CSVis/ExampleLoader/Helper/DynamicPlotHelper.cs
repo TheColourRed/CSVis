@@ -55,21 +55,21 @@ namespace CSVis.ExampleLoader.Helper
         public class DynamicPlotData
         {
 
-            public string Title { get; }
+            public string Title { get; set; }
 
-            public List<PointColumns> Points { get; }
+            public List<PointColumns> Points { get; set; }
 
-            public List<string> TimeColumn { get; }
+            public List<string> TimeColumn { get; set; }
 
-            public string XName { get; }
+            public string XName { get; set; }
 
-            public string YName { get; }
+            public string YName { get; set; }
 
-            public string ZName { get; }
+            public string ZName { get; set; }
             
-            public GameObject PointObject { get; }
+            public GameObject PointObject { get; set; }
             
-            public float PlotScale { get; }
+            public float PlotScale { get; set; }
 
             public DynamicPlotData(string title, List<PointColumns> points, List<string> timeColumn, string xName,
                 string yName, string zName)
